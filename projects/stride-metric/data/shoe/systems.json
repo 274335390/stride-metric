@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-07-25",
+  "canonicalInput": "foot_length_mm",
+  "systems": [
+    {
+      "id": "foot_length_mm",
+      "label": "Foot length",
+      "unit": "mm",
+      "kind": "measurement",
+      "notes": "Actual measured heel-to-longest-toe length; not a brand CM label."
+    },
+    {
+      "id": "mondopoint",
+      "label": "Mondopoint",
+      "unit": "mm",
+      "kind": "standard",
+      "supportsWidth": true,
+      "standard": "ISO 9407:2019"
+    },
+    {
+      "id": "eu",
+      "label": "EU",
+      "kind": "regional",
+      "aliases": ["EUR", "Paris point", "Continental"]
+    },
+    {
+      "id": "uk_adult",
+      "label": "UK Adult",
+      "kind": "regional"
+    },
+    {
+      "id": "uk_kids",
+      "label": "UK Kids",
+      "kind": "regional",
+      "notes": "Keep separate from adult numbering because the sequence resets."
+    },
+    {
+      "id": "us_men",
+      "label": "US Men",
+      "kind": "regional"
+    },
+    {
+      "id": "us_women",
+      "label": "US Women",
+      "kind": "regional"
+    },
+    {
+      "id": "us_kids_c",
+      "label": "US Kids C",
+      "kind": "regional",
+      "displaySuffix": "C"
+    },
+    {
+      "id": "us_kids_y",
+      "label": "US Youth Y",
+      "kind": "regional",
+      "displaySuffix": "Y"
+    },
+    {
+      "id": "cn",
+      "label": "CN",
+      "unit": "mm",
+      "kind": "national",
+      "notes": "Do not silently equate a CN label with measured foot length without checking the applicable standard."
+    },
+    {
+      "id": "jp",
+      "label": "JP",
+      "unit": "cm",
+      "kind": "national"
+    },
+    {
+      "id": "kr",
+      "label": "KR",
+      "unit": "mm",
+      "kind": "national"
+    },
+    {
+      "id": "br",
+      "label": "BR",
+      "kind": "national",
+      "status": "requires_regional_source"
+    }
+  ],
+  "marketDisplayProfiles": [
+    {"market": "US", "preferred": ["us_men", "us_women", "us_kids_c", "us_kids_y", "foot_length_mm"]},
+    {"market": "CA", "preferred": ["us_men", "us_women", "us_kids_c", "us_kids_y", "eu"]},
+    {"market": "GB", "preferred": ["uk_adult", "uk_kids", "eu", "foot_length_mm"]},
+    {"market": "EU", "preferred": ["eu", "uk_adult", "foot_length_mm"]},
+    {"market": "CN", "preferred": ["cn", "eu", "foot_length_mm"]},
+    {"market": "JP", "preferred": ["jp", "us_men", "us_women", "eu"]},
+    {"market": "KR", "preferred": ["kr", "us_men", "us_women", "eu"]},
+    {"market": "BR", "preferred": ["br", "us_men", "us_women", "eu"]},
+    {"market": "AU_NZ", "preferred": ["uk_adult", "us_men", "us_women", "eu"]},
+    {"market": "MX_LATAM", "preferred": ["foot_length_mm", "us_men", "us_women", "eu"]}
+  ]
+}

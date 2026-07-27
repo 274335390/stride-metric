@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "datasetType": "derived_algorithm_specification",
+  "productionUse": false,
+  "standard": "ISO 19407:2023",
+  "scope": "adult technical conversion",
+  "retrievedAt": "2026-07-25",
+  "publicPreviewSourceId": "iteh_iso_19407_2023_preview",
+  "copyrightNote": "This file records mathematical relationships observed in a lawful public preview. It does not reproduce the ISO tables or grant redistribution rights.",
+  "input": {
+    "id": "foot_length_mm",
+    "type": "number",
+    "minimumForPublishedAdultTable": 210,
+    "maximumForPublishedAdultTable": 321.8
+  },
+  "relationships": {
+    "mondopointRange1": {
+      "intervalMm": 5,
+      "originMm": 0
+    },
+    "mondopointRange2": {
+      "intervalMm": 7.5,
+      "originMm": 0
+    },
+    "chinaJapanKorea": {
+      "formula": "same numeric marking as Mondopoint/world size in millimetres",
+      "currentEditionEvidence": "GB/T 36935-2025 adult Table 1 groups world, Chinese, Korean and Japanese shoe sizes in the same columns"
+    },
+    "european": {
+      "intervalMm": 6.6666666667,
+      "formula": "(footLengthMm + 2 * 6.6666666667) / 6.6666666667",
+      "equivalentFormula": "0.15 * footLengthMm + 2",
+      "publishedGranularity": 0.5
+    },
+    "ukAdult": {
+      "intervalMm": 8.4666666667,
+      "formula": "(footLengthMm + 2 * 8.4666666667) / 8.4666666667 - 25",
+      "equivalentFormula": "(3 / 25.4) * footLengthMm - 23",
+      "publishedGranularity": 0.5
+    },
+    "usMenFromUk": {
+      "formula": "ukAdult + 1",
+      "warning": "The standard describes this as an arbitrary offset used in practice."
+    },
+    "usWomenFromUk": {
+      "formula": "ukAdult + 2",
+      "warning": "The standard says usually two sizes; brand practice varies."
+    }
+  },
+  "implementationRules": [
+    "Use foot length as the pivot; do not chain EU to UK to US conversions.",
+    "Keep exact calculated values separate from display rounding.",
+    "A standard reference result is not a brand fit guarantee.",
+    "Do not call a brand CM label measured foot length.",
+    "Children must not use these adult formulas."
+  ],
+  "verificationExamplesFromPublicPreview": [
+    {"footLengthMm": 240.1, "eu": 38, "ukAdult": 5.5},
+    {"footLengthMm": 260.1, "eu": 41, "ukAdult": null},
+    {"footLengthMm": 263.5, "eu": 41.5, "ukAdult": null},
+    {"footLengthMm": 266.8, "eu": 42, "ukAdult": 8.5},
+    {"footLengthMm": 300.2, "eu": 47, "ukAdult": null},
+    {"source": "gbt_36935_2025_printed_example", "category": "women", "mondopoint": 240, "eu": 38, "ukAdult": 5.5, "us": 7.5},
+    {"source": "gbt_36935_2025_printed_example", "category": "men", "mondopoint": 260, "eu": 41, "ukAdult": 7.5, "us": 8.5}
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "datasetType": "official_brand_product_family_size_chart",
+  "productionUse": true,
+  "brand": "Converse",
+  "brandId": "converse",
+  "productFamily": "chuck_taylor_all_star",
+  "audience": "adult_unisex",
+  "retrievedAt": "2026-07-26",
+  "officialUrl": "https://www.converse.com/size-chart-guide?id=men-shoes&modal=false",
+  "fitAdvice": {
+    "runs": "large",
+    "recommendation": "Converse recommends going one half size down for the documented Chuck Taylor family.",
+    "applyToPublishedRows": false
+  },
+  "measurementMeaning": {
+    "heelToeCm": "Heel-to-toe foot length published in the Converse family chart"
+  },
+  "columns": ["usMen", "usWomen", "uk", "eu", "heelToeCm"],
+  "rows": [
+    [3, 5, 3, 35, 22],
+    [3.5, 5.5, 3.5, 36, 22.5],
+    [4, 6, 4, 36.5, 23],
+    [4.5, 6.5, 4.5, 37, 23.5],
+    [5, 7, 5, 37.5, 24],
+    [5.5, 7.5, 5.5, 38, 24.5],
+    [6, 8, 6, 39, 24.5],
+    [6.5, 8.5, 6.5, 39.5, 25],
+    [7, 9, 7, 40, 25.5],
+    [7.5, 9.5, 7.5, 41, 26],
+    [8, 10, 8, 41.5, 26.5],
+    [8.5, 10.5, 8.5, 42, 27],
+    [9, 11, 9, 42.5, 27.5],
+    [9.5, 11.5, 9.5, 43, 28],
+    [10, 12, 10, 44, 28.5],
+    [10.5, 12.5, 10.5, 44.5, 29],
+    [11, 13, 11, 45, 29.5],
+    [11.5, 13.5, 11.5, 46, 30],
+    [12, 14, 12, 46.5, 30.5],
+    [13, 15, 13, 48, 31.5],
+    [14, 16, 14, 49, 32],
+    [15, 17, 15, 50, 33]
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "datasetType": "official_brand_body_measurement_chart",
+  "productionUse": true,
+  "brand": "Under Armour",
+  "brandId": "under_armour",
+  "audience": "adult_men",
+  "category": "tops",
+  "market": "US",
+  "retrievedAt": "2026-07-26",
+  "officialUrl": "https://www.underarmour.com/en-us/t/size-guide/mens-tops/",
+  "unit": "cm",
+  "columns": ["label", "chestMin", "chestMax", "waistMin", "waistMax"],
+  "rows": [
+    ["XS", 79, 86, 71, 74],
+    ["SM", 86, 94, 74, 79],
+    ["MD", 94, 104, 79, 86],
+    ["LG", 104, 112, 86, 94],
+    ["XL", 112, 122, 94, 104],
+    ["XXL", 122, 132, 104, 116],
+    ["3XL", 132, 142, 116, 127],
+    ["4XL", 142, 152, 127, 138],
+    ["5XL", 152, 163, 138, 150]
+  ],
+  "fitFamilies": {
+    "tall": {"garmentLengthAdjustmentCm": 5, "bodyRangesSameAsStandard": true}
+  }
+}

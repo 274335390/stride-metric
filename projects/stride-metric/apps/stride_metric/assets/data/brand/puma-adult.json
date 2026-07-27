@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "datasetType": "official_brand_size_chart",
+  "productionUse": true,
+  "brand": "PUMA",
+  "brandId": "puma",
+  "audience": "adult",
+  "market": "US",
+  "retrievedAt": "2026-07-26",
+  "officialUrl": "https://production-pna-sfcc.puma.com/us/en/size-charts.html",
+  "measurementMeaning": {
+    "de": "German/EU display value used by PUMA.",
+    "noFootLength": "The US official adult chart does not publish a per-row measured foot length."
+  },
+  "segments": [
+    {
+      "id": "men",
+      "columns": ["usMen", "de", "uk", "fr", "it", "es"],
+      "rows": [
+        [6, 38, 5, 38, 38, 38],
+        [6.5, 38.5, 5.5, 38.5, 38.5, 38.5],
+        [7, 39, 6, 39, 39, 39],
+        [7.5, 40, 6.5, 40, 40, 40],
+        [8, 40.5, 7, 40.5, 40.5, 40.5],
+        [8.5, 41, 7.5, 41, 41, 41],
+        [9, 42, 8, 42, 42, 42],
+        [9.5, 42.5, 8.5, 42.5, 42.5, 42.5],
+        [10, 43, 9, 43, 43, 43],
+        [10.5, 44, 9.5, 44, 44, 44],
+        [11, 44.5, 10, 44.5, 44.5, 44.5],
+        [11.5, 45, 10.5, 45, 45, 45],
+        [12, 46, 11, 46, 46, 46],
+        [12.5, 46.5, 11.5, 46.5, 46.5, 46.5],
+        [13, 47, 12, 47, 47, 47],
+        [14, 48.5, 13, 48.5, 48.5, 48.5],
+        [15, 49.5, 14, 49.5, 49.5, 49.5],
+        [16, 51, 15, 51, 51, 51]
+      ]
+    },
+    {
+      "id": "women",
+      "columns": ["usWomen", "de", "uk", "fr", "it", "es"],
+      "rows": [
+        [5.5, 35.5, 3, 35.5, 35.5, 35.5],
+        [6, 36, 3.5, 36, 36, 36],
+        [6.5, 37, 4, 37, 37, 37],
+        [7, 37.5, 4.5, 37.5, 37.5, 37.5],
+        [7.5, 38, 5, 38, 38, 38],
+        [8, 38.5, 5.5, 38.5, 38.5, 38.5],
+        [8.5, 39, 6, 39, 39, 39],
+        [9, 40, 6.5, 40, 40, 40],
+        [9.5, 40.5, 7, 40.5, 40.5, 40.5],
+        [10, 41, 7.5, 41, 41, 41],
+        [10.5, 42, 8, 42, 42, 42],
+        [11, 42.5, 8.5, 42.5, 42.5, 42.5]
+      ]
+    }
+  ],
+  "unisexRule": {
+    "sourceStatement": "Unisex products run in men's sizes only; women should order 1.5 sizes down from their usual size.",
+    "storedAsFitMetadata": true
+  }
+}

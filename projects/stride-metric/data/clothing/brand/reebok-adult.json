@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "datasetType": "official_brand_body_measurement_chart",
+  "productionUse": true,
+  "brand": "Reebok",
+  "brandId": "reebok",
+  "audience": "adult",
+  "market": "US",
+  "retrievedAt": "2026-07-26",
+  "officialUrl": "https://www.reebok.com/pages/size-guides",
+  "sourceUnit": "in",
+  "segments": [
+    {
+      "id": "men_tops",
+      "columns": ["label", "chestMin", "chestMax", "waistMin", "waistMax", "hipMin", "hipMax"],
+      "rows": [
+        ["XS", 32, 35, 28, 30.5, 32, 34.5],
+        ["S", 35, 38, 30.5, 33, 34.5, 37.5],
+        ["M", 38, 41, 33, 36, 37.5, 40.5],
+        ["L", 41, 44.5, 36, 40, 40.5, 44],
+        ["XL", 44.5, 49, 40, 44.5, 44, 47.5],
+        ["2XL", 49, 53.5, 44.5, 49.5, 47.5, 51],
+        ["3XL", 53.5, 58, 49.5, 54.5, 51, 55],
+        ["4XL", 58, 62.5, 54.5, 59.5, 55, 59],
+        ["5XL", 62.5, 67, 59.5, 64.5, 59, 63]
+      ]
+    },
+    {
+      "id": "men_bottoms",
+      "columns": ["label", "waistMin", "waistMax", "hipMin", "hipMax", "inseam"],
+      "rows": [
+        ["XS", 27, 29, 32, 34, 31.9],
+        ["S", 30, 32, 35, 37, 32.1],
+        ["M", 32, 35, 37, 40, 32.3],
+        ["L", 35, 39, 40, 44, 32.5],
+        ["XL", 39, 43, 44, 48, 32.7],
+        ["2XL", 43, 47, 48, 51, 32.5],
+        ["3XL", 48, 53, 51, 56, 32.3]
+      ]
+    },
+    {
+      "id": "women_tops",
+      "columns": ["label", "bustMin", "bustMax", "waistMin", "waistMax", "hipMin", "hipMax"],
+      "rows": [
+        ["XXS / 00", 28.7, 29.9, 22.4, 23.6, 32.3, 33.5],
+        ["XS / 0-2", 30, 32, 24, 26, 34, 36],
+        ["S / 4-6", 33, 35, 27, 28, 37, 38],
+        ["M / 8-10", 36, 37, 29, 31, 39, 41],
+        ["L / 12-14", 38, 40, 32, 34, 42, 43],
+        ["XL / 16-18", 41, 43, 35, 37, 44, 46],
+        ["XXL / 20-22", 44, 46, 38, 41, 47, 49],
+        ["1X / 16W", 42.5, 46, 36.5, 40, 45, 48.5],
+        ["2X / 18-20W", 46.5, 50, 40.5, 44, 49, 52.5],
+        ["3X / 22-24W", 50.5, 54, 44.5, 48, 53, 56.5],
+        ["4X / 26-28W", 54.5, 58, 48.5, 52, 57, 60.5]
+      ]
+    }
+  ],
+  "excludedSourceValues": [
+    {
+      "segment": "women_bottoms",
+      "label": "XXL / 20-22",
+      "field": "inseam",
+      "sourceDisplayed": "3 in",
+      "reason": "Clearly inconsistent with adjacent values; women's bottoms are excluded from this dataset until Reebok corrects or confirms it."
+    }
+  ],
+  "unitNormalization": "Runtime converts source inches using exactly 25.4 mm per inch; source values remain canonical for audit."
+}

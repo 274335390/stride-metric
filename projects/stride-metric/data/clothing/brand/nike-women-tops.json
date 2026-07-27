@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "datasetType": "official_brand_body_measurement_chart",
+  "productionUse": true,
+  "brand": "Nike",
+  "brandId": "nike",
+  "audience": "adult_women",
+  "category": "tops",
+  "market": "US",
+  "retrievedAt": "2026-07-26",
+  "officialUrl": "https://www.nike.com/size-fit/womens-tops-alpha",
+  "sourceUnit": "in",
+  "segments": [
+    {
+      "id": "standard",
+      "columns": ["label", "bustMin", "bustMax", "waistMin", "waistMax", "hipMin", "hipMax", "us", "uk", "eu", "fr", "it", "kr"],
+      "rows": [
+        ["XXS", 27.5, 29.5, 21.25, 23.5, 30.5, 33, "0", "2", "30", "32", "34", "60"],
+        ["XS", 29.5, 32.5, 23.5, 26, 33, 35.5, "0-2", "4-6", "32-34", "34-36", "36-38", "65"],
+        ["S", 32.5, 35.5, 26, 29, 35.5, 38.5, "4-6", "8-10", "36-38", "38-40", "40-42", "70"],
+        ["M", 35.5, 38, 29, 31.5, 38.5, 41, "8-10", "12-14", "40-42", "42-44", "44-46", "75"],
+        ["L", 38, 41, 31.5, 34.5, 41, 44, "12-14", "16-18", "44-46", "46-48", "48-50", "80"],
+        ["XL", 41, 44.5, 34.5, 38.5, 44, 47, "16-18", "20-22", "48-50", "50-52", "52-54", "85"],
+        ["XXL", 44.5, 48.5, 38.5, 42.5, 47, 50, "20-22", "24-26", "52-54", "54-56", "56-58", "90"]
+      ]
+    },
+    {
+      "id": "plus",
+      "columns": ["label", "bustMin", "bustMax", "waistMin", "waistMax", "hipMin", "hipMax", "us", "uk", "eu", "fr"],
+      "rows": [
+        ["0X", 44, 47, 40, 43, 48, 51, "16W", "22", "50", "52"],
+        ["1X", 47, 49.5, 43, 45.5, 51, 54, "18W-20W", "24-26", "52-54", "54-56"],
+        ["2X", 49.5, 52, 45.5, 49, 54, 57, "22W-24W", "28-30", "56-58", "58-60"],
+        ["3X", 52, 55, 49, 53, 57, 61, "26W-28W", "32-34", "60-62", "60-62"],
+        ["4X", 55, 58, 53, 57, 61, 65, "30W-32W", "36-38", "64-68", "66-68"]
+      ]
+    }
+  ],
+  "fitFamilies": {
+    "tall": {
+      "heightRangeCm": [173, 183],
+      "bodyRangesSameAsStandard": true,
+      "garmentLengthAdjustmentCm": 4.5
+    }
+  },
+  "conflictRule": "If bust and waist suggest different sizes, Nike says to use the bust-indicated size.",
+  "unitNormalization": "Runtime converts source inches using exactly 25.4 mm per inch; retain source values for audit."
+}

@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "datasetType": "official_brand_body_measurement_chart",
+  "productionUse": true,
+  "brand": "Nike",
+  "brandId": "nike",
+  "audience": "adult_men",
+  "category": "bottoms",
+  "market": "US",
+  "retrievedAt": "2026-07-26",
+  "officialUrl": "https://www.nike.com/size-fit/mens_bottoms_alpha",
+  "sourceUnit": "in",
+  "columns": ["label", "waistMin", "waistMax", "hipMin", "hipMax", "heightRule"],
+  "rows": [
+    ["XXS", 22.5, 25.5, 28.5, 31.5, "under 5ft7in"],
+    ["XS", 25.5, 29, 31.5, 35, "5ft7in-6ft0in"],
+    ["S", 29, 32, 35, 37.5, "5ft7in-6ft0in"],
+    ["M", 32, 35, 37.5, 41, "5ft7in-6ft0in"],
+    ["L", 35, 38, 41, 44, "5ft7in-6ft0in"],
+    ["XL", 38, 43, 44, 47, "5ft7in-6ft0in"],
+    ["XXL", 43, 47.5, 47, 50.5, "5ft7in-6ft0in"],
+    ["3XL", 47.5, 52.5, 50.5, 53.5, "5ft7in-6ft0in"],
+    ["4XL", 52.5, 57, 53.5, 58.5, "5ft7in-6ft0in"]
+  ],
+  "fitFamilies": {
+    "tall": {
+      "heightRangeCm": [183, 196],
+      "bodyRangesSameAsStandard": true,
+      "garmentInseamAdjustmentCm": 5,
+      "garmentRiseAdjustmentCm": 1.5
+    }
+  },
+  "conflictRule": "If waist and hip suggest different sizes, Nike says to use the hip-indicated size.",
+  "unitNormalization": "Runtime converts source inches using exactly 25.4 mm per inch; retain source values for audit."
+}

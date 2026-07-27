@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-07-26",
+  "datasetType": "brand_size_chart_registry",
+  "productionUse": true,
+  "minimumLaunchTarget": {
+    "brandsWithAdultOfficialRows": 8,
+    "brandsWithChildOfficialRows": 5,
+    "requiredSegments": ["adult_men", "adult_women", "kids"],
+    "requiredProvenance": ["officialUrl", "retrievedAt", "measurementMeaning", "market"]
+  },
+  "brands": [
+    {
+      "id": "nike",
+      "name": "Nike",
+      "status": "adult_and_kids_rows_ingested",
+      "officialUrl": "https://www.nike.com/size-fit/mens-footwear",
+      "segments": ["adult_men", "adult_women"],
+      "importantRule": "Nike CM/JP label is not the same value as measured foot length.",
+      "datasetPaths": [
+        "data/shoe/brand/nike-adult.json",
+        "data/shoe/brand/nike-kids.json"
+      ]
+    },
+    {
+      "id": "new_balance",
+      "name": "New Balance",
+      "status": "adult_validation_rows_and_kids_rows_ingested",
+      "officialUrl": "https://www.newbalance.com/size-guide.html",
+      "segments": ["adult_men", "adult_women"],
+      "datasetPaths": [
+        "data/shoe/brand/new-balance-adult.json",
+        "data/shoe/brand/new-balance-kids.json"
+      ]
+    },
+    {
+      "id": "reebok",
+      "name": "Reebok",
+      "status": "adult_rows_ingested",
+      "officialUrl": "https://www.reebok.com/pages/f45-size-guides",
+      "segments": ["adult_men", "adult_women"],
+      "availableColumns": ["usMen", "usWomen", "uk", "eu", "auNz", "chinaMm", "japanCm", "heelToeCm"],
+      "datasetPath": "data/shoe/brand/reebok-unisex.json"
+    },
+    {
+      "id": "vans",
+      "name": "Vans",
+      "status": "adult_kids_toddlers_rows_ingested",
+      "officialUrl": "https://www.vans.com/en-us/help/size-charts",
+      "segments": ["adult_men", "adult_women", "kids", "toddlers"],
+      "availableColumns": ["usMen", "usWomen", "usYouth", "uk", "eu", "jp", "footLength"],
+      "datasetPaths": [
+        "data/shoe/brand/vans-unisex.json",
+        "data/shoe/brand/vans-kids.json",
+        "data/shoe/brand/vans-toddlers.json"
+      ]
+    },
+    {
+      "id": "converse",
+      "name": "Converse",
+      "status": "chuck_adult_rows_ingested_other_families_pending",
+      "officialUrl": "https://www.converse.com/s/ConverseUS/size-chart-guide",
+      "segments": ["adult_men", "adult_women", "kids", "toddlers"],
+      "families": ["chuck_taylor_all_star", "standard"],
+      "importantRule": "Chuck Taylor styles are documented as running large and commonly recommend one half size down.",
+      "datasetPaths": ["data/shoe/brand/converse-chuck-adult.json"]
+    },
+    {
+      "id": "adidas",
+      "name": "adidas",
+      "status": "adult_and_kids_rows_ingested",
+      "officialUrl": "https://www.adidas.com/us/help/size_charts/men-shoes",
+      "segments": ["adult_men", "adult_women", "kids"],
+      "datasetPaths": [
+        "data/shoe/brand/adidas-adult.json",
+        "data/shoe/brand/adidas-kids.json"
+      ]
+    },
+    {
+      "id": "asics",
+      "name": "ASICS",
+      "status": "adult_and_kids_rows_ingested",
+      "officialUrl": "https://www.asics.com/us/en-us/aligned-size-charts/",
+      "segments": ["adult_men", "adult_women", "kids"],
+      "datasetPaths": [
+        "data/shoe/brand/asics-men.json",
+        "data/shoe/brand/asics-women.json",
+        "data/shoe/brand/asics-kids.json"
+      ]
+    },
+    {
+      "id": "puma",
+      "name": "PUMA",
+      "status": "adult_and_kids_rows_ingested",
+      "officialUrl": "https://production-pna-sfcc.puma.com/us/en/size-charts.html",
+      "segments": ["adult_men", "adult_women", "kids"],
+      "datasetPaths": [
+        "data/shoe/brand/puma-adult.json",
+        "data/shoe/brand/puma-kids.json"
+      ]
+    },
+    {
+      "id": "skechers",
+      "name": "Skechers",
+      "status": "men_rows_ingested_women_and_kids_pending",
+      "officialUrl": "https://www.skechers.com/size-chart/",
+      "segments": ["adult_men", "adult_women", "kids"],
+      "datasetPath": "data/shoe/brand/skechers-men.json"
+    }
+  ],
+  "modelRequirements": [
+    "A brand CM/JP label and actual measured foot length must be separate fields.",
+    "Rows must be scoped by audience and market.",
+    "Product-family overrides must take precedence over the brand default.",
+    "A row must retain its official source URL and retrieval date.",
+    "Do not interpolate across a numbering reset in children's sizes.",
+    "If a brand page says to size up or down, store the advice as fit metadata rather than altering the published row."
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "datasetType": "official_brand_body_measurement_chart",
+  "productionUse": true,
+  "brand": "adidas",
+  "brandId": "adidas",
+  "audience": "adult_women",
+  "category": "bottoms",
+  "market": "US",
+  "retrievedAt": "2026-07-26",
+  "officialUrl": "https://www.adidas.com/us/help/size_charts/women-pants_shorts",
+  "unit": "cm",
+  "segments": [
+    {
+      "id": "standard",
+      "columns": ["label", "waistMin", "waistMax", "hipMin", "hipMax", "inseam", "uk", "it", "fr", "eu"],
+      "rows": [
+        ["2XS (00)", 57, 60, 82, 85, 77.5, "0-2", "32-34", "28-30", "26-28"],
+        ["XS (0-2)", 61, 66, 86, 91, 78, "4-6", "36-38", "32-34", "30-32"],
+        ["S (4-6)", 67, 72, 92, 97, 78.5, "8-10", "40-42", "36-38", "34-36"],
+        ["M (8-10)", 73, 78, 98, 103, 79, "12-14", "44-46", "40-42", "38-40"],
+        ["L (12-14)", 79, 85, 104, 110, 79.5, "16-18", "48-50", "44-46", "42-44"],
+        ["XL (16-18)", 86, 94, 111, 117, 80, "20-22", "52-54", "48-50", "46-48"],
+        ["2XL (20)", 95, 104, 118, 125, 80.5, "24-26", "56-58", "52-54", "50-52"]
+      ]
+    },
+    {
+      "id": "tall",
+      "minimumHeightCm": 179,
+      "columns": ["label", "waistMin", "waistMax", "hipMin", "hipMax", "inseam"],
+      "rows": [
+        ["S Tall", 67, 72, 92, 97, 83.5],
+        ["M Tall", 73, 78, 98, 103, 84],
+        ["L Tall", 79, 85, 104, 110, 84.5],
+        ["XL Tall", 86, 94, 111, 117, 85],
+        ["2XL Tall", 95, 104, 118, 125, 85.5]
+      ]
+    },
+    {
+      "id": "petite",
+      "maximumHeightCm": 165,
+      "columns": ["label", "waistMin", "waistMax", "hipMin", "hipMax", "inseam"],
+      "rows": [
+        ["2XS Petite", 57, 60, 82, 85, 72.5],
+        ["XS Petite", 61, 66, 86, 91, 73],
+        ["S Petite", 67, 72, 92, 97, 73.5],
+        ["M Petite", 73, 78, 98, 103, 74],
+        ["L Petite", 79, 85, 104, 110, 74.5],
+        ["XL Petite", 86, 94, 111, 117, 75],
+        ["2XL Petite", 95, 104, 118, 125, 75.5]
+      ]
+    },
+    {
+      "id": "plus",
+      "columns": ["label", "waistMin", "waistMax", "hipMin", "hipMax", "inseam", "uk", "it", "fr", "eu"],
+      "rows": [
+        ["1X (14W-16W)", 89, 98, 111, 120, 78, "20-22", "52-54", "48-50", "46-48"],
+        ["2X (18W-20W)", 99, 108, 121, 130, 78, "24-26", "56-58", "52-54", "50-52"],
+        ["3X (22W-24W)", 109, 118, 131, 140, 77, "28-30", "60-62", "56-58", "54-56"],
+        ["4X (26W-28W)", 119, 128, 141, 150, 76, "32-34", "64-66", "60-62", "58-60"]
+      ]
+    },
+    {
+      "id": "maternity",
+      "measurementBasis": "pre_pregnancy",
+      "columns": ["label", "waistMin", "waistMax", "hipMin", "hipMax", "inseam"],
+      "rows": [
+        ["2XS (00)", 57, 60, 82, 85, 77.5],
+        ["XS (0-2)", 61, 66, 86, 91, 78],
+        ["S (4-6)", 67, 72, 92, 97, 78.5],
+        ["M (8-10)", 73, 78, 98, 103, 79],
+        ["L (12-14)", 79, 85, 104, 110, 79.5],
+        ["XL (16-18)", 86, 94, 111, 117, 80],
+        ["2XL (20)", 95, 104, 118, 125, 80.5]
+      ],
+      "brandGuidance": "Order the pre-pregnancy size; adidas notes that some customers may size up by the third trimester."
+    }
+  ],
+  "denimBodyMeasurements": {
+    "columns": ["alpha", "de", "inchLabel", "waistCm", "hipCm"],
+    "rows": [
+      ["2XS", 28, 23, 59.5, 84.5],
+      ["XS", 30, 24, 62, 87],
+      ["S", 32, 25, 64.5, 89.5],
+      ["M", 34, 26, 67, 92],
+      ["L", 36, 27, 69.5, 94.5],
+      ["XL", 38, 28, 72, 97]
+    ]
+  },
+  "denimInseamLabelsCm": {
+    "30": [72, 76],
+    "32": [77, 81],
+    "34": [82, 86]
+  }
+}

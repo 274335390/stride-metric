@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-07-26",
+  "datasetType": "national_and_market_standard_registry",
+  "productionUse": true,
+  "purpose": "Define which authoritative baseline and caveats apply to each displayed market size system.",
+  "globalBaseline": {
+    "conversionStandard": "ISO 19407:2023",
+    "markingStandard": "ISO 9407:2019",
+    "pivot": "foot_length_mm",
+    "warning": "ISO 19407 describes approximate cross-system guidance, not a universal brand-fit guarantee."
+  },
+  "markets": [
+    {
+      "market": "international_mondopoint",
+      "displayCodes": ["Mondopoint", "MP"],
+      "standard": "ISO 9407:2019",
+      "status": "current_international_standard",
+      "rule": "Express the intended foot length in millimetres; optional foot width may follow.",
+      "sourceUrl": "https://www.iso.org/standard/71594.html"
+    },
+    {
+      "market": "united_kingdom",
+      "displayCodes": ["UK"],
+      "standard": "BS ISO 19407:2023",
+      "status": "current_national_adoption",
+      "relationship": "Identical to ISO 19407:2023",
+      "authority": "British Standards Institution",
+      "sourceUrl": "https://knowledge.bsigroup.com/products/footwear-sizing-conversion-of-sizing-systems-1"
+    },
+    {
+      "market": "france",
+      "displayCodes": ["EU", "EUR", "FR"],
+      "standard": "NF ISO 19407",
+      "edition": "2023-08",
+      "status": "current_national_adoption",
+      "relationship": "National adoption with international kinship to ISO 19407:2023",
+      "authority": "AFNOR",
+      "sourceUrl": "https://www.boutique.afnor.org/fr-fr/norme/nf-iso-19407/chaussures-pointures-conversion-des-systemes-de-pointures/fa204950/349804"
+    },
+    {
+      "market": "germany",
+      "displayCodes": ["EU", "EUR", "DE"],
+      "standard": "ISO 19407:2023",
+      "status": "international_standard_sold_by_national_body",
+      "authority": "DIN Media",
+      "caveat": "No separate current DIN national adoption was confirmed in this research. Do not label the EU conversion as a DIN rule.",
+      "sourceUrl": "https://www.dinmedia.de/en/standard/iso-19407/370015949"
+    },
+    {
+      "market": "italy",
+      "displayCodes": ["EU", "EUR", "IT"],
+      "standard": "ISO 19407:2023",
+      "status": "current_international_standard_listed_by_national_body",
+      "authority": "UNI",
+      "caveat": "The official UNI catalogue entry found is ISO 19407, not a separate Italian size-conversion formula.",
+      "sourceUrl": "https://store.uni.com/iso-19407-2023"
+    },
+    {
+      "market": "japan",
+      "displayCodes": ["JP", "cm"],
+      "standard": "JIS S 5037:1998",
+      "status": "current_reaffirmed_national_standard",
+      "relationship": "Based on ISO 9407:1991 with additional Japanese provisions",
+      "rule": "Japanese shoe size is based on foot length together with ball girth or foot width; length is normally displayed in centimetres.",
+      "appCaveat": "Do not treat a JP length-only result as a complete fit recommendation when width/girth is unknown.",
+      "authority": "Japanese Standards Association / JISC",
+      "sourceUrl": "https://www.jisc.go.jp/app/jis/general/GnrJISSearch.html",
+      "supportingCatalogUrl": "https://www.boutique.afnor.org/en-gb/standard/jis-s-5037/sizing-system-for-shoes-note-approved-20191021-jis-20141020-jis-20091001-ji/as010923/298257"
+    },
+    {
+      "market": "republic_of_korea",
+      "displayCodes": ["KR", "mm"],
+      "standard": "KS M ISO 9407",
+      "edition": "2024-12-31",
+      "status": "current_national_adoption",
+      "relationship": "Korean adoption of ISO 9407 Mondopoint",
+      "rule": "Use the same millimetre foot-length number as Mondopoint.",
+      "authority": "Korean Standards Association catalogue",
+      "sourceUrl": "https://www.kssn.net/search/stddetail.do?itemNo=K001010044681"
+    },
+    {
+      "market": "united_states",
+      "displayCodes": ["US Men", "US Women", "US Kids"],
+      "standard": "ISO 19407:2023 conversion guidance",
+      "status": "no_strict_manufacturer_independent_dimensional_mapping_confirmed",
+      "authorityFinding": "NIST defines shoe size as the manufacturer-designated size and states there is no strict dimensional relationship between a manufacturer's shoe size and outsole length or width.",
+      "appRule": "Use ISO 19407 as the generic baseline and permit brand-specific overrides.",
+      "sourceUrl": "https://www.nist.gov/glossary-term/31916"
+    },
+    {
+      "market": "australia_new_zealand",
+      "displayCodes": ["AU", "NZ"],
+      "standard": "No current national consumer shoe-size conversion standard confirmed",
+      "status": "market_alias_only",
+      "appRule": "If AU/NZ is offered, label it as a market convention and map to UK only as an approximate default; allow brand overrides.",
+      "caveat": "AS/NZS footwear standards found concern protective-footwear selection and fit, not a universal consumer conversion table.",
+      "sourceUrl": "https://consultations.standards.govt.nz/draft-standards/safety-protective-and-occupational-footwear/"
+    }
+  ],
+  "implementationRules": [
+    "Store foot length in millimetres as the canonical input and conversion pivot.",
+    "Separate standard conversion results from brand-specific label results.",
+    "Show Standard estimate or Brand chart as the result provenance.",
+    "Never infer width, ball girth, shoe volume or toe-box fit from length alone.",
+    "For Japan, support an optional width or girth field in a later version.",
+    "For US and AU/NZ, disclose that the result is approximate and may vary by manufacturer.",
+    "Do not describe EU sizes as one legally harmonized EU consumer sizing standard."
+  ]
+}

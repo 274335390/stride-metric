@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "datasetType": "competitor_observation",
+  "productionUse": false,
+  "retrievedAt": "2026-07-26",
+  "evidence": [
+    "docs/imgs/g1.jpg",
+    "docs/imgs/g3.jpg",
+    "docs/imgs/g5.jpg",
+    "docs/imgs/g6.jpg",
+    "docs/imgs/g7.jpg",
+    "docs/imgs/g8.jpg"
+  ],
+  "sourceProvenance": "Unknown competitor application; screenshots supplied by the user.",
+  "conclusion": "The competitor appears to reuse some ISO-style arithmetic relationships, but its displayed crosswalk is not GB/T 36935-2025 / ISO 19407:2023 Table 2 or Table 3.",
+  "sharedRelationships": [
+    "Adult men's US marking is generally UK + 1.",
+    "Adult women's US marking is generally UK + 2.",
+    "KR is displayed as a millimetre-like label and cm/JP as a centimetre-like label."
+  ],
+  "representativeComparisons": [
+    {
+      "segment": "adult_men",
+      "input": {"usMen": 4},
+      "competitor": {"ukAdult": 3, "eu": 35, "cmOrJp": 22, "kr": 220},
+      "gbtRecommendedUkPivot": {"ukAdult": 3, "eu": 35, "mondopoint": 220, "usMen": 4},
+      "result": "matches_this_anchor"
+    },
+    {
+      "segment": "adult_men",
+      "input": {"usMen": 8.5},
+      "competitor": {"ukAdult": 7.5, "eu": 42, "cmOrJp": 26.5, "kr": 265},
+      "gbtPrintedExample": {"ukAdult": 7.5, "eu": 41, "mondopoint": 260, "usMen": 8.5},
+      "result": "does_not_match"
+    },
+    {
+      "segment": "adult_women",
+      "input": {"usWomen": 7.5},
+      "competitor": {"ukAdult": 5.5, "eu": 38, "cmOrJp": 24, "kr": 240},
+      "gbtPrintedExample": {"ukAdult": 5.5, "eu": 38, "mondopoint": 240, "usWomen": 7.5},
+      "result": "matches_this_anchor"
+    },
+    {
+      "segment": "adult_women",
+      "input": {"usWomen": 10},
+      "competitor": {"ukAdult": 8, "eu": 42, "cmOrJp": 26.5, "kr": 265},
+      "gbtRecommendedUkPivot": {"ukAdult": 8, "eu": 41.5, "mondopoint": 260, "usWomen": 10},
+      "result": "does_not_match"
+    },
+    {
+      "segment": "children",
+      "input": {"usChild": "4C"},
+      "competitor": {"ukChild": 3, "eu": 19.5, "cmOrJp": 11.6, "kr": 115},
+      "gbtTable3": {"usChild": 4, "ukChild": 3.5, "eu": 19.5, "footLengthMm": 120, "mondopoint": 120},
+      "result": "does_not_match"
+    },
+    {
+      "segment": "children",
+      "input": {"usChild": "3Y"},
+      "competitor": {"ukChild": 2, "eu": 35, "cmOrJp": 22, "kr": 220},
+      "gbtTable3": {"usChild": 3, "ukChild": 2.5, "eu": 34.5, "footLengthMm": 213, "mondopoint": null},
+      "result": "does_not_match",
+      "additionalFinding": "GB/T Table 3 maps the 220 mm anchor to US 4, UK 3.5 and EU 35.5."
+    },
+    {
+      "segment": "children",
+      "input": {"usChild": "5Y"},
+      "competitor": {"ukChild": 4, "eu": 38, "cmOrJp": 24, "kr": 240},
+      "gbtTable3": {"usChild": 5, "ukChild": 4.5, "eu": 37, "footLengthMm": 230, "mondopoint": 230},
+      "result": "does_not_match"
+    }
+  ],
+  "usageRule": "Never import competitor values into the production conversion engine. Use them only for product research and regression comparisons."
+}

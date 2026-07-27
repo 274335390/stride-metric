@@ -1,0 +1,527 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-07-26",
+  "sources": [
+    {
+      "id": "iso_19407_2023",
+      "title": "ISO 19407:2023 Footwear - Sizing - Conversion of sizing systems",
+      "url": "https://www.iso.org/standard/83106.html",
+      "authority": "ISO",
+      "status": "current",
+      "access": "paid_full_text",
+      "covers": ["adult technical conversion", "adult simplified marking", "children conversion"],
+      "licenseReviewRequired": true
+    },
+    {
+      "id": "iteh_iso_19407_2023_preview",
+      "title": "ISO 19407:2023 public watermarked preview",
+      "url": "https://cdn.standards.iteh.ai/samples/83106/d07404c4034c4b9495d8cc6dee3c5c48/ISO-19407-2023.pdf",
+      "authority": "iTeh Standards preview of ISO publication",
+      "status": "public_preview",
+      "access": "lawful_public_preview",
+      "coverage": "ISO front matter and published content pages 1-6, including adult formulae and adult tables; final children's table on content page 7 is not included",
+      "licenseReviewRequired": true
+    },
+    {
+      "id": "iteh_iso_19407_2022_draft_preview",
+      "title": "ISO/DIS 19407:2022 public watermarked draft preview",
+      "url": "https://cdn.standards.iteh.ai/samples/83106/cf1ce98c841d4b1997691a688f58c313/ISO-FDIS-19407.pdf",
+      "authority": "iTeh Standards preview of ISO draft",
+      "status": "superseded_draft",
+      "access": "lawful_public_preview",
+      "coverage": "Draft content through adult Table 2; children's table is not included",
+      "productionUse": false
+    },
+    {
+      "id": "gbt_36935_2025",
+      "title": "GB/T 36935-2025 Footwear - Conversion of sizing systems",
+      "url": "https://std.samr.gov.cn//gb/search/gbDetailed?id=42BA7D06A4BDE936E06397BE0A0ACDC9",
+      "authority": "SAMR/SAC China",
+      "status": "current_since_2026-05-01",
+      "relationship": "Identical adoption of ISO 19407:2023",
+      "access": "official_catalog_only_for_adopted_recommended_standard",
+      "officialSeller": "China Standards Online Service, China Standards Press",
+      "officialProductUrl": "https://www.spc.org.cn/online/65d422edcd6c25f5d02a0a5044aca12c.html",
+      "listPriceCny": 36,
+      "observedDiscountPriceCny": 31,
+      "pages": 16,
+      "licenseReviewRequired": true,
+      "localEvidenceSourceId": "gbt_36935_2025_user_screenshots"
+    },
+    {
+      "id": "gbt_36935_2025_user_screenshots",
+      "title": "GB/T 36935-2025 supplied page screenshots",
+      "authority": "Images supplied by the user; standard issued by SAMR/SAC",
+      "status": "current_edition_complete_conversion_tables",
+      "access": "user_supplied",
+      "coverage": "Cover, foreword, introduction, clauses 1-5, complete adult Tables 1 and 2 (pages 3-6), complete children's Table 3 (pages 7-8), references and publication colophon",
+      "use": "current-edition verification and internal structured-data derivation",
+      "licenseReviewRequired": true,
+      "warning": "Do not redistribute the screenshots or standard text as part of the application."
+    },
+    {
+      "id": "scribd_gbt_36935_2018_user_upload",
+      "title": "GB/T 36935-2018 Footwear — Conversion of sizing systems",
+      "url": "https://www.scribd.com/document/962619702/GB-T-36935-2018-%E9%9E%8B%E7%B1%BB-%E9%9E%8B%E5%8F%B7%E5%AF%B9%E7%85%A7%E8%A1%A8",
+      "authority": "User-uploaded copy on Scribd; standard originally issued by SAC",
+      "status": "superseded_by_gbt_36935_2025",
+      "relationship": "Identical adoption of ISO/TS 19407:2015",
+      "access": "publicly_viewable_user_upload",
+      "coverage": "User supplied screenshots of adult Tables 1 and 2 and complete children's Table 3",
+      "use": "internal transcription and cross-validation only",
+      "licenseReviewRequired": true,
+      "warning": "Public visibility of a user upload is not evidence of redistribution rights."
+    },
+    {
+      "id": "iso_9407_2019",
+      "title": "ISO 9407:2019 Footwear sizing - Mondopoint system of sizing and marking",
+      "url": "https://www.iso.org/standard/71594.html",
+      "authority": "ISO",
+      "status": "confirmed_2026",
+      "access": "paid_full_text",
+      "licenseReviewRequired": true
+    },
+    {
+      "id": "bs_iso_19407_2023",
+      "title": "BS ISO 19407:2023 Footwear - Sizing - Conversion of sizing systems",
+      "url": "https://knowledge.bsigroup.com/products/footwear-sizing-conversion-of-sizing-systems-1",
+      "authority": "British Standards Institution",
+      "status": "current",
+      "relationship": "Identical to ISO 19407:2023",
+      "access": "official_catalog"
+    },
+    {
+      "id": "nf_iso_19407_2023",
+      "title": "NF ISO 19407 Footwear - Sizing - Conversion of sizing systems",
+      "url": "https://www.boutique.afnor.org/fr-fr/norme/nf-iso-19407/chaussures-pointures-conversion-des-systemes-de-pointures/fa204950/349804",
+      "authority": "AFNOR",
+      "status": "current",
+      "published": "2023-08",
+      "relationship": "National adoption related to ISO 19407:2023",
+      "access": "official_catalog"
+    },
+    {
+      "id": "jis_s_5037_1998",
+      "title": "JIS S 5037:1998 Sizing system for shoes",
+      "url": "https://www.jisc.go.jp/app/jis/general/GnrJISSearch.html",
+      "authority": "JISC / Japanese Standards Association",
+      "status": "current_reaffirmed",
+      "relationship": "Based on ISO 9407:1991 with Japanese provisions for foot length, ball girth and width",
+      "access": "official_search_catalog"
+    },
+    {
+      "id": "ks_m_iso_9407",
+      "title": "KS M ISO 9407 Footwear sizing - Mondopoint system of sizing and marking",
+      "url": "https://www.kssn.net/search/stddetail.do?itemNo=K001010044681",
+      "authority": "Korean Standards Association catalogue",
+      "status": "current",
+      "updated": "2024-12-31",
+      "relationship": "Korean adoption of ISO 9407",
+      "access": "catalog_public_full_text_paid"
+    },
+    {
+      "id": "nist_shoe_size_definition",
+      "title": "NIST Shoe Size glossary definition",
+      "url": "https://www.nist.gov/glossary-term/31916",
+      "authority": "US National Institute of Standards and Technology",
+      "status": "current_public_guidance",
+      "finding": "Manufacturer-designated size; no strict dimensional relationship to outsole length and width",
+      "access": "public"
+    },
+    {
+      "id": "iso_8559_1_2017",
+      "title": "ISO 8559-1:2017 Anthropometric definitions for body measurement",
+      "url": "https://www.iso.org/standard/61686.html",
+      "authority": "ISO",
+      "status": "current",
+      "access": "paid_full_text"
+    },
+    {
+      "id": "iso_8559_2_2025",
+      "title": "ISO 8559-2:2025 Primary and secondary dimension indicators",
+      "url": "https://www.iso.org/standard/85590.html",
+      "authority": "ISO",
+      "status": "current_replaces_2017",
+      "access": "paid_full_text"
+    },
+    {
+      "id": "iso_8559_3_2018",
+      "title": "ISO 8559-3:2018 Methodology for the creation of body measurement tables and intervals",
+      "url": "https://www.iso.org/standard/67334.html",
+      "authority": "ISO",
+      "status": "current_confirmed",
+      "access": "paid_full_text",
+      "finding": "Defines methodology and population groups; example values are not a universal clothing conversion table."
+    },
+    {
+      "id": "iso_8559_4_2023",
+      "title": "ISO 8559-4:2023 Determination of the coverage ratios of body measurement tables",
+      "url": "https://www.iso.org/standard/80356.html",
+      "authority": "ISO",
+      "status": "current",
+      "access": "paid_full_text",
+      "finding": "Coverage-ratio calculations require a body-dimension database for the target population."
+    },
+    {
+      "id": "astm_d13_55",
+      "title": "ASTM D13.55 body measurement standards catalog",
+      "url": "https://www.astm.org/get-involved/technical-committees/committee-d13/subcommittee-d13/jurisdiction-d1355",
+      "authority": "ASTM International",
+      "status": "current_catalog",
+      "access": "catalog_public_standards_paid",
+      "warning": "Do not ingest ASTM standard text without explicit permission; ASTM pages state AI-use restrictions."
+    },
+    {
+      "id": "new_balance_size_guide",
+      "title": "New Balance Size & Width Guide",
+      "url": "https://www.newbalance.com/size-guide.html",
+      "authority": "New Balance",
+      "access": "public_brand_page",
+      "use": "cross_validation_only"
+    },
+    {
+      "id": "new_balance_kids_size_guide",
+      "title": "New Balance Kids Shoe Size Guide",
+      "url": "https://www.newbalance.com/kids-shoe-size-guide/",
+      "authority": "New Balance",
+      "access": "public_brand_page",
+      "use": "brand_override",
+      "coverage": "Babies/toddlers, little kids and big kids; length, international conversion and width circumference",
+      "qualityNote": "A non-monotonic UK value displayed for US Kids 2.5 is excluded pending independent verification."
+    },
+    {
+      "id": "adidas_shoe_size_guide",
+      "title": "adidas Men's Shoes Size Guide",
+      "url": "https://www.adidas.com/us/help/size_charts/shoes",
+      "authority": "adidas",
+      "access": "public_brand_page",
+      "use": "cross_validation_only"
+    },
+    {
+      "id": "adidas_kids_shoe_size_guide",
+      "title": "adidas Kids Shoes Size Chart",
+      "url": "https://www.adidas.com/us/help/size_charts/kids-shoes",
+      "authority": "adidas",
+      "access": "public_brand_page",
+      "use": "brand_override",
+      "coverage": "Babies/toddlers, children, youth/teens and measured heel-to-toe length"
+    },
+    {
+      "id": "nike_mens_footwear",
+      "title": "Nike Men's Footwear Size Chart",
+      "url": "https://www.nike.com/gb/size-fit/mens-footwear",
+      "authority": "Nike",
+      "access": "public_brand_page",
+      "use": "cross_validation_only",
+      "importantNote": "Nike states that the CM label may differ from measured foot length."
+    },
+    {
+      "id": "nike_kids_footwear",
+      "title": "Nike Kids' Footwear Size Chart",
+      "url": "https://www.nike.com/jp/en/size-fit/kids-footwear",
+      "authority": "Nike",
+      "access": "public_brand_page",
+      "use": "brand_override",
+      "coverage": "Babies/toddlers, little kids and big kids",
+      "importantNote": "Nike explicitly states that the CM/JP label differs from measured foot length."
+    },
+    {
+      "id": "asics_size_guide",
+      "title": "ASICS Size Guide",
+      "url": "https://www.asics.com/us/en-us/aligned-size-charts/",
+      "authority": "ASICS",
+      "access": "public_dynamic_brand_page",
+      "use": "brand_override",
+      "coverage": "Men, women and kids footwear plus width codes"
+    },
+    {
+      "id": "puma_us_size_charts",
+      "title": "PUMA US Size Charts",
+      "url": "https://production-pna-sfcc.puma.com/us/en/size-charts.html",
+      "authority": "PUMA",
+      "access": "public_brand_page",
+      "use": "brand_override",
+      "coverage": "Adult men, adult women, toddler, little-kids and junior footwear"
+    },
+    {
+      "id": "reebok_f45_size_guides",
+      "title": "Reebok F45 Size Guides - Unisex Shoes",
+      "url": "https://www.reebok.com/pages/f45-size-guides",
+      "authority": "Reebok",
+      "access": "public_brand_page",
+      "use": "brand_override",
+      "coverage": "Adult unisex US/UK/EU/AU-NZ/China/Japan and heel-to-toe measurement"
+    },
+    {
+      "id": "vans_size_charts",
+      "title": "Vans Clothing and Shoe Fit Guide",
+      "url": "https://www.vans.com/en-us/help/size-charts",
+      "authority": "Vans",
+      "access": "public_brand_page",
+      "use": "brand_override",
+      "coverage": "Adult unisex, kids and toddlers"
+    },
+    {
+      "id": "converse_size_guide",
+      "title": "Converse Size Guide",
+      "url": "https://www.converse.com/s/ConverseUS/size-chart-guide",
+      "authority": "Converse",
+      "access": "public_brand_page",
+      "use": "product_family_override",
+      "importantNote": "Converse publishes family-specific fit advice; Chuck Taylor styles are marked as running large."
+    },
+    {
+      "id": "adidas_men_apparel_size_chart",
+      "title": "adidas Men's Clothing Size Chart",
+      "url": "https://www.adidas.com/us/help/size_charts",
+      "authority": "adidas",
+      "access": "public_brand_page",
+      "use": "brand_market_category_override",
+      "coverage": "US men's tops body measurements and fit families"
+    },
+    {
+      "id": "adidas_women_apparel_size_chart",
+      "title": "adidas Women's Shirts and Tops Size Chart",
+      "url": "https://www.adidas.com/us/help/size_charts/women-shirts_tops",
+      "authority": "adidas",
+      "access": "public_brand_page",
+      "use": "brand_market_category_override",
+      "coverage": "US women's standard, plus, tall, petite and maternity fit families"
+    },
+    {
+      "id": "adidas_men_bottoms_size_chart",
+      "title": "adidas Men's Pants and Shorts Size Chart",
+      "url": "https://www.adidas.com/us/help/size_charts/men-pants_shorts",
+      "authority": "adidas",
+      "access": "public_brand_page",
+      "use": "brand_market_category_override",
+      "coverage": "US men's standard, tall, short and denim bottoms plus international numeric labels"
+    },
+    {
+      "id": "adidas_women_bottoms_size_chart",
+      "title": "adidas Women's Pants, Shorts and Leggings Size Chart",
+      "url": "https://www.adidas.com/us/help/size_charts/women-pants_shorts",
+      "authority": "adidas",
+      "access": "public_brand_page",
+      "use": "brand_market_category_override",
+      "coverage": "US women's standard, tall, petite, plus, maternity and denim bottoms"
+    },
+    {
+      "id": "adidas_kids_apparel_size_chart",
+      "title": "adidas Kids Clothing Size Chart",
+      "url": "https://www.adidas.com/us/help/size_charts/kids-clothing",
+      "authority": "adidas",
+      "access": "public_brand_page",
+      "use": "brand_market_category_override",
+      "coverage": "US babies, children and youth body measurements"
+    },
+    {
+      "id": "nike_men_tops_size_chart",
+      "title": "Nike Men's Tops Size Chart",
+      "url": "https://www.nike.com/size-fit/mens_tops_alpha",
+      "authority": "Nike",
+      "access": "public_brand_page",
+      "use": "brand_market_category_override",
+      "coverage": "US men's standard and tall tops"
+    },
+    {
+      "id": "nike_women_tops_size_chart",
+      "title": "Nike Women's Tops Size Chart",
+      "url": "https://www.nike.com/size-fit/womens-tops-alpha",
+      "authority": "Nike",
+      "access": "public_brand_page",
+      "use": "brand_market_category_override",
+      "coverage": "US women's standard, plus and tall tops"
+    },
+    {
+      "id": "nike_men_bottoms_size_chart",
+      "title": "Nike Men's Bottoms Size Chart",
+      "url": "https://www.nike.com/size-fit/mens_bottoms_alpha",
+      "authority": "Nike",
+      "access": "public_brand_page",
+      "use": "brand_market_category_override",
+      "coverage": "US men's standard and tall bottoms",
+      "importantNote": "Nike says hip takes priority when waist and hip suggest different sizes."
+    },
+    {
+      "id": "nike_women_bottoms_size_chart",
+      "title": "Nike Women's Bottoms Size Chart",
+      "url": "https://www.nike.com/size-fit/womens-bottoms-alpha",
+      "authority": "Nike",
+      "access": "public_brand_page",
+      "use": "brand_market_category_override",
+      "coverage": "US women's standard, plus, short and tall bottoms with international labels",
+      "importantNote": "Nike says hip takes priority when waist and hip suggest different sizes."
+    },
+    {
+      "id": "nike_boys_clothing_size_chart",
+      "title": "Nike Boys' and Unisex Kids Clothing Size Chart",
+      "url": "https://www.nike.com/size-fit/boys-clothing",
+      "authority": "Nike",
+      "access": "public_brand_page",
+      "use": "brand_market_category_override",
+      "coverage": "US standard and plus kids clothing; height, chest, waist and hip"
+    },
+    {
+      "id": "nike_girls_clothing_size_chart",
+      "title": "Nike Girls' Clothing Size Chart",
+      "url": "https://www.nike.com/size-fit/girls-clothing",
+      "authority": "Nike",
+      "access": "public_brand_page",
+      "use": "brand_market_category_override",
+      "coverage": "US standard and plus girls clothing; height, chest, waist and hip"
+    },
+    {
+      "id": "hm_id_men_size_guide",
+      "title": "H&M Indonesia Men's Size Guide",
+      "url": "https://id.hm.com/id_en/customer-service/sizeguide/men.html",
+      "authority": "H&M",
+      "access": "public_brand_page",
+      "use": "brand_market_category_override",
+      "market": "ID",
+      "warning": "H&M chart versions differ by market; this source is not a global H&M chart."
+    },
+    {
+      "id": "hm_do_women_size_guide",
+      "title": "H&M Dominican Republic Women's Size Guide",
+      "url": "https://www.hm.com/do/customer-service/sizeguide/ladies/",
+      "authority": "H&M",
+      "access": "public_brand_page",
+      "use": "brand_market_category_override",
+      "market": "DO",
+      "warning": "H&M chart versions differ by market; this source is not a global H&M chart."
+    },
+    {
+      "id": "hm_bh_kids_size_guide",
+      "title": "H&M Bahrain Kids Size Guide",
+      "url": "https://www.hm.com/bh/customer-service/sizeguide/kids/",
+      "authority": "H&M",
+      "access": "public_brand_page",
+      "use": "brand_market_category_override",
+      "market": "BH",
+      "warning": "H&M chart versions differ by market; this source is not a global H&M chart."
+    },
+    {
+      "id": "reebok_apparel_size_guides",
+      "title": "Reebok Clothing Size Guides",
+      "url": "https://www.reebok.com/pages/size-guides",
+      "authority": "Reebok",
+      "access": "public_brand_page",
+      "use": "brand_market_category_override",
+      "qualityNote": "The displayed women's-bottoms XXL inseam value is implausible and excluded pending correction or confirmation."
+    },
+    {
+      "id": "under_armour_men_tops_size_guide",
+      "title": "Under Armour Men's Tops Size Chart",
+      "url": "https://www.underarmour.com/en-us/t/size-guide/mens-tops/",
+      "authority": "Under Armour",
+      "access": "public_brand_page",
+      "use": "brand_market_category_override"
+    },
+    {
+      "id": "under_armour_women_tops_size_guide",
+      "title": "Under Armour Women's Tops Size Chart",
+      "url": "https://www.underarmour.com/en-us/t/size-guide/womens-tops/",
+      "authority": "Under Armour",
+      "access": "public_brand_page",
+      "use": "brand_market_category_override"
+    },
+    {
+      "id": "under_armour_men_bottoms_size_guide",
+      "title": "Under Armour Men's Bottoms Size Chart",
+      "url": "https://www.underarmour.com/en-us/t/size-guide/mens-bottoms/",
+      "authority": "Under Armour",
+      "access": "public_brand_page",
+      "use": "brand_market_category_override"
+    },
+    {
+      "id": "under_armour_women_bottoms_size_guide",
+      "title": "Under Armour Women's Bottoms Size Chart",
+      "url": "https://www.underarmour.com/en-us/t/size-guide/womens-bottoms/",
+      "authority": "Under Armour",
+      "access": "public_brand_page",
+      "use": "brand_market_category_override"
+    },
+    {
+      "id": "under_armour_boys_tops_size_guide",
+      "title": "Under Armour Boys' Tops Size Chart",
+      "url": "https://www.underarmour.com/en-us/t/size-guide/boys-tops/",
+      "authority": "Under Armour",
+      "access": "public_brand_page",
+      "use": "brand_market_category_override"
+    },
+    {
+      "id": "under_armour_girls_size_guide",
+      "title": "Under Armour Girls' Clothing Size Chart",
+      "url": "https://www.underarmour.com/en-us/t/size-guide/girls-tops/",
+      "authority": "Under Armour",
+      "access": "public_brand_page",
+      "use": "brand_market_category_override",
+      "coverage": "Youth, plus, little girls, toddlers and infants"
+    },
+    {
+      "id": "levis_us_size_guide",
+      "title": "Levi's US Size Chart and Guide",
+      "url": "https://www.levi.com/US/en_US/info/sizeguide",
+      "authority": "Levi Strauss & Co.",
+      "access": "public_brand_page",
+      "use": "brand_market_category_override",
+      "coverage": "Men's bottoms and tops, women's bottoms and tops, plus sizes, inseam by height and kids",
+      "importantNote": "Several women's tables publish measurement anchors rather than intervals; the app must not invent interval boundaries."
+    },
+    {
+      "id": "uniqlo_us_size_guidance",
+      "title": "UNIQLO US sizing guidance",
+      "url": "https://faq-us.uniqlo.com/articles/en_US/FAQ/How-can-I-figure-out-my-size",
+      "authority": "UNIQLO",
+      "access": "public_brand_page",
+      "use": "acquisition_boundary",
+      "finding": "Exact size charts are product-specific. Product pages and the Size Chart/Compare or MySize tools are the authoritative path.",
+      "productionRule": "Do not create a universal UNIQLO brand chart from the extended-size label list."
+    },
+    {
+      "id": "uniqlo_us_extended_sizes",
+      "title": "UNIQLO US Extended Sizes",
+      "url": "https://www.uniqlo.com/us/en/special-feature/extended-sizes",
+      "authority": "UNIQLO",
+      "access": "public_brand_page",
+      "use": "label_availability_only",
+      "importantNote": "UNIQLO says to use each product page for exact sizes; the displayed XXS-3XL list is availability, not a body-measurement conversion table."
+    },
+    {
+      "id": "zara_us_my_size",
+      "title": "Zara US What's My Size",
+      "url": "https://www.zara.com/us/en/help-center/MySize",
+      "authority": "Zara",
+      "access": "public_brand_page",
+      "use": "acquisition_boundary",
+      "finding": "Zara states that size varies by style, cut and fabric; measurement guides and recommendations are provided per item.",
+      "productionRule": "Require a product/SKU-specific chart or show unsupported; never publish a universal Zara S/M/L crosswalk."
+    },
+    {
+      "id": "appstore_shoe_size_converter_chart",
+      "url": "https://apps.apple.com/us/app/shoe-size-converter-chart/id1642653964",
+      "authority": "Apple App Store"
+    },
+    {
+      "id": "appstore_shoe_clothing_size_converter",
+      "url": "https://apps.apple.com/us/app/shoe-clothing-size-converter/id6780225246",
+      "authority": "Apple App Store"
+    },
+    {
+      "id": "appstore_sizego",
+      "url": "https://apps.apple.com/us/app/sizego-clothing-size-converter/id6748774607",
+      "authority": "Apple App Store"
+    },
+    {
+      "id": "appstore_what_size",
+      "url": "https://apps.apple.com/us/app/what-size/id6757195133",
+      "authority": "Apple App Store"
+    },
+    {
+      "id": "googleplay_shoe_clothes_converter",
+      "url": "https://play.google.com/store/apps/details?id=com.mascarphone.shoesize",
+      "authority": "Google Play"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "datasetType": "official_brand_size_chart",
+  "productionUse": true,
+  "brand": "ASICS",
+  "brandId": "asics",
+  "audience": "adult_men",
+  "market": "US",
+  "retrievedAt": "2026-07-26",
+  "officialUrl": "https://www.asics.com/us/en-us/aligned-size-charts/",
+  "extractionMethod": "Rendered official dynamic table",
+  "measurementMeaning": {
+    "cmLabel": "ASICS CM column; retained as a brand label and not silently relabelled as measured foot length"
+  },
+  "columns": ["usMen", "uk", "eu", "cmLabel"],
+  "rows": [
+    [4, 3, 36, 22.5],
+    [4.5, 3.5, 37, 23],
+    [5, 4, 37.5, 23.5],
+    [5.5, 4.5, 38, 24],
+    [6, 5, 39, 24.5],
+    [6.5, 5.5, 39.5, 25],
+    [7, 6, 40, 25.25],
+    [7.5, 6.5, 40.5, 25.5],
+    [8, 7, 41.5, 26],
+    [8.5, 7.5, 42, 26.5],
+    [9, 8, 42.5, 27],
+    [9.5, 8.5, 43.5, 27.5],
+    [10, 9, 44, 28],
+    [10.5, 9.5, 44.5, 28.25],
+    [11, 10, 45, 28.5],
+    [11.5, 10.5, 46, 29],
+    [12, 11, 46.5, 29.5],
+    [12.5, 11.5, 47, 30],
+    [13, 12, 48, 30.5],
+    [13.5, 12.5, 48.5, 30.75],
+    [14, 13, 49, 31],
+    [14.5, 13.5, 49.5, 31.5],
+    [15, 14, 50.5, 32]
+  ],
+  "widthCodes": {
+    "narrow": "B",
+    "standard": "D",
+    "wide": "2E",
+    "extraWide": "4E"
+  }
+}

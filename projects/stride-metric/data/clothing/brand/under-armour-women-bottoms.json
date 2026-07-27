@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "datasetType": "official_brand_body_measurement_chart",
+  "productionUse": true,
+  "brand": "Under Armour",
+  "brandId": "under_armour",
+  "audience": "adult_women",
+  "category": "bottoms",
+  "market": "US",
+  "retrievedAt": "2026-07-26",
+  "officialUrl": "https://www.underarmour.com/en-us/t/size-guide/womens-bottoms/",
+  "sourceUnit": "in",
+  "columns": ["label", "usNumeric", "waistMin", "waistMax", "hipMin", "hipMax"],
+  "rows": [
+    ["XXS", "00", 24.5, 25.5, 33, 34.5],
+    ["XS", "0-2", 25.5, 27, 34.5, 36],
+    ["SM", "4-6", 27, 29, 36, 38],
+    ["MD", "8-10", 29, 31, 38, 40],
+    ["LG", "12-14", 31, 34, 40, 43],
+    ["XL", "16", 34, 37, 43, 46],
+    ["XXL", "18", 37, 40, 46, 49],
+    ["3XL", "20", 40, 43, 49, 52],
+    ["1X", "16W-18W", 39, 43.5, 47, 50.5],
+    ["2X", "20W-22W", 43.5, 48.5, 50.5, 54.5],
+    ["3X", "24W-26W", 48.5, 53, 54.5, 58]
+  ],
+  "fitFamilies": {
+    "tall": {"bodyRangesSameAsStandard": true, "garmentLengthAdjustmentCm": 5},
+    "short": {"bodyRangesSameAsStandard": true, "garmentLengthAdjustmentCm": -5}
+  },
+  "unitNormalization": "Runtime converts source inches using exactly 25.4 mm per inch; retain source values for audit."
+}

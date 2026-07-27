@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "datasetType": "official_brand_body_measurement_chart",
+  "productionUse": true,
+  "brand": "Under Armour",
+  "brandId": "under_armour",
+  "audience": "adult_women",
+  "category": "tops",
+  "market": "US",
+  "retrievedAt": "2026-07-26",
+  "officialUrl": "https://www.underarmour.com/en-us/t/size-guide/womens-tops/",
+  "unit": "cm",
+  "columns": ["label", "usNumeric", "bustMin", "bustMax", "waistMin", "waistMax"],
+  "rows": [
+    ["XXS", "00", 79, 83, 62, 65],
+    ["XS", "0-2", 83, 85, 65, 68],
+    ["SM", "4-6", 85, 91, 68, 74],
+    ["MD", "8-10", 91, 96, 74, 79],
+    ["LG", "12-14", 96, 104, 79, 86],
+    ["XL", "16", 104, 112, 86, 94],
+    ["XXL", "18", 112, 119, 94, 102]
+  ],
+  "partialCoverage": {
+    "3XL": "Official inch ranges observed; cm row not returned in the indexed page extract.",
+    "plus1XTo3X": "Official inch ranges observed; normalized cm rows pending direct capture."
+  }
+}

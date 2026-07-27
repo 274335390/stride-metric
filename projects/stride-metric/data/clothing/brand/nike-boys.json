@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "datasetType": "official_brand_body_measurement_chart",
+  "productionUse": true,
+  "brand": "Nike",
+  "brandId": "nike",
+  "audience": "boys",
+  "category": "apparel",
+  "market": "US",
+  "retrievedAt": "2026-07-26",
+  "officialUrl": "https://www.nike.com/size-fit/boys-clothing",
+  "sourceUnit": "in",
+  "columns": ["label", "numeric", "age", "heightMin", "heightMax", "chestMin", "chestMax", "waistMin", "waistMax", "hipMin", "hipMax"],
+  "rows": [
+    ["XS", "6-7", "7-8", 48, 50, 25.5, 26, 23.5, 24, 27, 28],
+    ["S", "8-9", "8-10", 50, 54, 26, 27, 24, 25.5, 28, 29.5],
+    ["S+", "8-9 Plus", "8-10", 50, 54, 28, 30, 26, 28, 30, 32],
+    ["M", "10-12", "10-12", 54, 58, 27, 29.5, 25.5, 27, 29.5, 31.5],
+    ["M+", "10-12 Plus", "10-12", 54, 58, 30, 33, 28, 30, 32, 34],
+    ["L", "14-16", "12-13", 58, 62, 29.5, 32, 27, 28.5, 31.5, 33.5],
+    ["L+", "14-16 Plus", "12-13", 58, 62, 33, 36, 30, 32, 34, 37],
+    ["XL", "18-20", "13-15", 62, 67, 32, 35, 28.5, 29.5, 33.5, 35],
+    ["XL+", "18-20 Plus", "13-15", 62, 67, 36, 38.5, 32, 34.5, 37, 39.5]
+  ],
+  "conflictRule": "If chest and waist suggest different sizes, Nike says to use the chest-indicated size.",
+  "ageRule": "Age is guidance only; height and girths are the matching inputs.",
+  "unitNormalization": "Runtime converts source inches using exactly 25.4 mm per inch; retain source values for audit."
+}

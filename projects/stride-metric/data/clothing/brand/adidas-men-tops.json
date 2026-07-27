@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "datasetType": "official_brand_body_measurement_chart",
+  "productionUse": true,
+  "brand": "adidas",
+  "brandId": "adidas",
+  "audience": "adult_men",
+  "category": "tops",
+  "fitFamily": "standard",
+  "market": "US",
+  "retrievedAt": "2026-07-26",
+  "officialUrl": "https://www.adidas.com/us/help/size_charts",
+  "unit": "cm",
+  "columns": ["label", "chestMin", "chestMax", "waistMin", "waistMax", "hipMin", "hipMax"],
+  "rows": [
+    ["XS", 83, 86, 71, 74, 82, 85],
+    ["S", 87, 92, 75, 80, 86, 91],
+    ["M", 93, 100, 81, 88, 92, 99],
+    ["L", 101, 108, 89, 96, 100, 107],
+    ["XL", 109, 118, 97, 106, 108, 116],
+    ["2XL", 119, 130, 107, 119, 117, 125],
+    ["3XL", 131, 142, 120, 132, 126, 135]
+  ],
+  "measurementPriority": ["chest", "waist", "hip"],
+  "fitFamilies": {
+    "tall": {"heightRule": "over 188 cm", "bodyRangesSameAsStandard": true},
+    "short": {"heightRule": "up to 175 cm", "bodyRangesSameAsStandard": true}
+  }
+}

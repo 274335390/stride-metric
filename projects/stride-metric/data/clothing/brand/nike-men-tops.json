@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "datasetType": "official_brand_body_measurement_chart",
+  "productionUse": true,
+  "brand": "Nike",
+  "brandId": "nike",
+  "audience": "adult_men",
+  "category": "tops",
+  "market": "US",
+  "retrievedAt": "2026-07-26",
+  "officialUrl": "https://www.nike.com/size-fit/mens_tops_alpha",
+  "sourceUnit": "in",
+  "columns": ["label", "chestMin", "chestMax", "waistMin", "waistMax", "hipMin", "hipMax", "heightRule"],
+  "rows": [
+    ["XXS", 28.1, 31.5, 22.5, 25.5, 28.5, 31.5, "under 5ft7in"],
+    ["XS", 31.5, 35, 25.5, 29, 31.5, 35, "5ft7in-6ft0in"],
+    ["S", 35, 37.5, 29, 32, 35, 37.5, "5ft7in-6ft0in"],
+    ["M", 37.5, 41, 32, 35, 37.5, 41, "5ft7in-6ft0in"],
+    ["L", 41, 44, 35, 38, 41, 44, "5ft7in-6ft0in"],
+    ["XL", 44, 48.5, 38, 43, 44, 47, "5ft7in-6ft0in"],
+    ["XXL", 48.5, 53.5, 43, 47.5, 47, 50.5, "5ft7in-6ft0in"],
+    ["3XL", 53.5, 58, 47.5, 52.5, 50.5, 53.5, "5ft7in-6ft0in"],
+    ["4XL", 58, 63, 52.5, 57, 53.5, 58.5, "5ft7in-6ft0in"]
+  ],
+  "fitFamilies": {
+    "tall": {
+      "heightRangeCm": [183, 196],
+      "bodyRangesSameAsStandard": true,
+      "garmentLengthAdjustmentCm": 4.5
+    }
+  },
+  "conflictRule": "If chest and waist suggest different sizes, Nike says to use the chest-indicated size.",
+  "unitNormalization": "Runtime converts source inches using exactly 25.4 mm per inch; retain source values for audit."
+}

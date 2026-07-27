@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-07-26",
+  "datasetType": "clothing_brand_chart_registry",
+  "productionUse": true,
+  "minimumLaunchTarget": {
+    "brandsWithAdultMen": 5,
+    "brandsWithAdultWomen": 5,
+    "brandsWithKids": 3,
+    "requiredCategories": ["tops", "bottoms", "kids"],
+    "requiredMeasurements": ["chest_or_bust", "waist", "hip"]
+  },
+  "brands": [
+    {
+      "id": "adidas",
+      "status": "adult_tops_bottoms_and_kids_ingested",
+      "datasetPaths": [
+        "data/clothing/brand/adidas-men-tops.json",
+        "data/clothing/brand/adidas-women-tops.json",
+        "data/clothing/brand/adidas-men-bottoms.json",
+        "data/clothing/brand/adidas-women-bottoms.json",
+        "data/clothing/brand/adidas-kids.json"
+      ]
+    },
+    {
+      "id": "nike",
+      "status": "adult_tops_bottoms_boys_and_girls_ingested",
+      "datasetPaths": [
+        "data/clothing/brand/nike-men-tops.json",
+        "data/clothing/brand/nike-women-tops.json",
+        "data/clothing/brand/nike-men-bottoms.json",
+        "data/clothing/brand/nike-women-bottoms.json",
+        "data/clothing/brand/nike-boys.json",
+        "data/clothing/brand/nike-girls.json"
+      ]
+    },
+    {
+      "id": "hm",
+      "status": "adult_men_women_and_kids_ingested_market_scoped",
+      "datasetPaths": [
+        "data/clothing/brand/hm-men.json",
+        "data/clothing/brand/hm-women.json",
+        "data/clothing/brand/hm-kids.json"
+      ]
+    },
+    {
+      "id": "reebok",
+      "status": "adult_men_women_tops_and_men_bottoms_ingested",
+      "datasetPaths": ["data/clothing/brand/reebok-adult.json"]
+    },
+    {
+      "id": "under_armour",
+      "status": "adult_tops_bottoms_boys_and_girls_ingested",
+      "datasetPaths": [
+        "data/clothing/brand/under-armour-men-tops.json",
+        "data/clothing/brand/under-armour-women-tops.json",
+        "data/clothing/brand/under-armour-men-bottoms.json",
+        "data/clothing/brand/under-armour-women-bottoms.json",
+        "data/clothing/brand/under-armour-boys.json",
+        "data/clothing/brand/under-armour-girls.json"
+      ]
+    },
+    {
+      "id": "levis",
+      "status": "adult_men_ranges_and_women_anchors_ingested",
+      "datasetPaths": ["data/clothing/brand/levis-adult.json"]
+    },
+    {
+      "id": "uniqlo",
+      "status": "product_level_dynamic_chart_required",
+      "datasetPaths": [],
+      "acquisitionFinding": "UNIQLO directs customers to each product page for exact sizing; a stable US-wide body-measurement table was not confirmed."
+    },
+    {
+      "id": "zara",
+      "status": "product_level_dynamic_chart_required",
+      "datasetPaths": [],
+      "acquisitionFinding": "Zara states that sizes vary by style, cut and fabric and exposes measurements on product pages; no universal Zara chart should be inferred."
+    }
+  ],
+  "modelRequirements": [
+    "Use body measurements, never garment measurements, unless the dataset explicitly says otherwise.",
+    "A product label such as M is valid only within a brand, audience, category, market and chart version.",
+    "Tall, petite, plus and maternity are fit families, not aliases for standard sizes.",
+    "When measurements map to different sizes, apply the brand's documented priority rule and show the conflict.",
+    "Age is guidance for kids; measured height and girths take priority."
+  ]
+}

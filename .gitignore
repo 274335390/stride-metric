@@ -1,0 +1,38 @@
+# Operating systems and editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.iml
+
+# Dart / Flutter
+**/.dart_tool/
+**/.flutter-plugins-dependencies
+**/.packages
+**/.pub-cache/
+**/build/
+**/coverage/
+**/artifacts/
+**/local.properties
+**/key.properties
+**/*.jks
+**/*.keystore
+**/google-services.json
+
+# JavaScript
+**/node_modules/
+**/dist/
+**/playwright-report/
+**/test-results/
+
+# Local and generated files
+*.apk
+*.aab
+*.ipa
+*.log
+*.tmp
+*.bak
+
+# Licensed standards and internal evidence are intentionally not published
+projects/stride-metric/docs/imgs/
+projects/stride-metric/docs/*.pdf

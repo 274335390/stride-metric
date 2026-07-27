@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "retrievedAt": "2026-07-25",
+  "scope": "Public US App Store and Google Play listing facts only",
+  "downloadEstimateAvailable": false,
+  "competitors": [
+    {
+      "name": "Shoe Size Converter & Chart",
+      "store": "Apple App Store",
+      "appId": "1642653964",
+      "category": "Utilities",
+      "price": "Free with IAP",
+      "rating": 4.5,
+      "ratingCount": 28,
+      "sizeMb": 33.6,
+      "features": ["adult and children shoe conversion", "cm and inches", "charts"],
+      "monetization": "Remove Ads Forever USD 3.99",
+      "privacy": "Advertising and diagnostics data may be collected",
+      "sourceId": "appstore_shoe_size_converter_chart"
+    },
+    {
+      "name": "Shoe & Clothing Size Converter",
+      "store": "Apple App Store",
+      "appId": "6780225246",
+      "category": "Utilities",
+      "price": "Free",
+      "sizeMb": 1.6,
+      "features": ["shoes", "men and women clothing", "people profiles", "body measurements", "offline", "50-language claim", "US UK EU IT FR JP"],
+      "privacy": "Developer declares no data collected",
+      "sourceId": "appstore_shoe_clothing_size_converter",
+      "strategicNote": "Directly overlaps the proposed offline plus family-profile differentiation."
+    },
+    {
+      "name": "SizeGo-Clothing Size Converter",
+      "store": "Apple App Store",
+      "appId": "6748774607",
+      "category": "Utilities",
+      "price": "Free",
+      "rating": 5,
+      "ratingCount": 2,
+      "sizeMb": 44.3,
+      "features": ["men women kids baby", "US UK EU JP KR CN", "brand charts", "favorites", "AI analysis"],
+      "privacy": "Listing declares tracking and collection categories",
+      "sourceId": "appstore_sizego"
+    },
+    {
+      "name": "WHAT SIZE?",
+      "store": "Apple App Store",
+      "appId": "6757195133",
+      "category": "Shopping",
+      "price": "USD 2.99",
+      "sizeMb": 6.1,
+      "features": ["offline", "brand-to-brand conversion", "closet", "8 languages"],
+      "sourceId": "appstore_what_size"
+    },
+    {
+      "name": "Shoe & clothes Size Converter",
+      "store": "Google Play",
+      "packageId": "com.mascarphone.shoesize",
+      "price": "Free with ads",
+      "publicInstallBand": "10K+",
+      "rating": 5,
+      "ratingCount": 55,
+      "features": ["shoes", "women and men clothing", "rings", "watches", "belts", "mattresses"],
+      "sourceId": "googleplay_shoe_clothes_converter"
+    }
+  ],
+  "unsupportedClaims": [
+    {
+      "claim": "All independent apps receive 1,000-5,000 downloads per month",
+      "reason": "Apple does not publish competitor download counts; no paid intelligence export was supplied."
+    },
+    {
+      "claim": "Combined size tools have 30% higher retention according to Sensor Tower",
+      "reason": "No Sensor Tower report, export, methodology or cohort definition was supplied."
+    },
+    {
+      "claim": "Black Friday and Christmas downloads double",
+      "reason": "Plausible hypothesis but no category-level time series was supplied."
+    },
+    {
+      "claim": "Family profiles and offline clothing conversion are unique",
+      "reason": "A 2026 App Store competitor publicly advertises both."
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "datasetType": "official_brand_size_chart",
+  "productionUse": true,
+  "brand": "Reebok",
+  "brandId": "reebok",
+  "audience": "adult_unisex",
+  "retrievedAt": "2026-07-26",
+  "officialUrl": "https://www.reebok.com/pages/f45-size-guides",
+  "measurementMeaning": {
+    "chinaLabelMm": "China size label published by Reebok",
+    "japanLabelCm": "Japan size label published by Reebok",
+    "heelToeCm": "Heel-to-toe measurement published by Reebok"
+  },
+  "columns": ["usMen", "usWomen", "uk", "eu", "auNz", "chinaLabelMm", "japanLabelCm", "heelToeCm"],
+  "rows": [
+    [4, 5, 3.5, 36, 3.5, 220, 22, 22.1],
+    [4.5, 5.5, 4, 36.5, 4, 225, 22.5, 22.4],
+    [5, 6, 4.5, 37.5, 4.5, 230, 23, 22.9],
+    [5.5, 6.5, 5, 38, 5, 235, 23.5, 23.4],
+    [6, 7, 5.5, 38.5, 5.5, 240, 24, 23.6],
+    [6.5, 7.5, 6, 39, 6, 245, 24.5, 24.1],
+    [7, 8, 6.5, 40, 6.5, 250, 25, 24.6],
+    [7.5, 8.5, 7, 40.5, 7, 255, 25.5, 24.9],
+    [8, 9, 7.5, 41, 7.5, 260, 26, 25.4],
+    [8.5, 9.5, 8, 42, 8, 265, 26.5, 25.9],
+    [9, 10, 8.5, 42.5, 8.5, 270, 27, 26.2],
+    [9.5, 10.5, 9, 43, 9, 275, 27.5, 26.7],
+    [10, 11, 9.5, 44, 9.5, 280, 28, 27.2],
+    [10.5, 11.5, 10, 44.5, 10, 285, 28.5, 27.4],
+    [11, 12, 10.5, 45, 10.5, 290, 29, 27.9],
+    [11.5, 12.5, 11, 45.5, 11, 295, 29.5, 28.4],
+    [12, 13, 11.5, 46.5, 11.5, 300, 30, 28.7],
+    [12.5, 13.5, 12, 47, 12, 305, 30.5, 29.2],
+    [13, 14, 12.5, 48, 12.5, 310, 31, 29.7],
+    [13.5, 14.5, 13, 48.5, 13, 315, 31.5, 30],
+    [14, 15, 13.5, 49, 13.5, 320, 32, 30.5]
+  ]
+}

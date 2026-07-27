@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "datasetType": "standard_evidence_record",
+  "productionUse": false,
+  "standard": "GB/T 36935-2025 / ISO 19407:2023",
+  "retrievedAt": "2026-07-26",
+  "transcriptionBasis": "User-provided screenshots of cover, foreword, introduction, clauses 1-5, complete adult Tables 1 and 2, and complete children's Table 3",
+  "publication": {
+    "publishedOn": "2025-10-31",
+    "effectiveOn": "2026-05-01",
+    "replaces": "GB/T 36935-2018",
+    "adoption": "ISO 19407:2023, IDT"
+  },
+  "declaredScope": {
+    "systems": [
+      "Mondopoint/world",
+      "EU",
+      "UK",
+      "China",
+      "Japan",
+      "Korea",
+      "US"
+    ],
+    "tables": [
+      "adult technical conversion",
+      "adult recommended marking (simplified)",
+      "children's conversion"
+    ],
+    "pivot": "foot length"
+  },
+  "declaredChangesFrom2018": [
+    "Adjusted the chapter structure and table placement (2025 clauses 4.2 and 5 versus 2018 clauses 3.2 and 4).",
+    "Changed explanatory material concerning recommended adult shoe-size marking (2025 clause 4.3 versus 2018 clause 3.3)."
+  ],
+  "currentEditionFindings": {
+    "koreanMarking": {
+      "relationship": "The adult Table 1 header groups Korean shoe size with Mondopoint/world, Chinese and Japanese shoe sizes.",
+      "unit": "mm",
+      "numericMapping": "same numeric marking as the grouped world/China/Japan column"
+    },
+    "children": {
+      "finding": "The complete current-edition Table 3 was transcribed and checked across pages 7-8. It contains 38 rows from 120 mm through 236 mm. The 120-217 mm overlap matches the supplied 2018 table image.",
+      "confidence": "direct_current_edition_verification",
+      "verifiedRows": 38,
+      "footLengthRangeMm": [120, 236],
+      "differencesWithin2018CheckedOverlap": 0
+    },
+    "brandFitWarning": "The introduction states that approximate cross-system sizes are consumer guidance and cannot replace correct China-size marking on shoes or packaging, including brand marking."
+  },
+  "adultExamplesPrintedInCurrentEdition": [
+    {
+      "category": "women",
+      "mondopoint": 240,
+      "eu": 38,
+      "uk": 5.5,
+      "us": 7.5
+    },
+    {
+      "category": "men",
+      "eu": 41,
+      "mondopoint": 260,
+      "uk": 7.5,
+      "us": 8.5
+    }
+  ],
+  "tableCoverage": {
+    "table1AdultTechnical": "complete, pages 3-5",
+    "table2AdultRecommended": "complete, page 6",
+    "table3Children": "complete, pages 7-8",
+    "references": "page 9",
+    "publicationColophon": "back cover supplied"
+  },
+  "copyrightNote": "This file records bibliographic information, declared changes, relationships and short factual examples for internal implementation validation. It does not reproduce page images or the full standard."
+}

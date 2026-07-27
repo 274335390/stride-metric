@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "datasetType": "official_brand_size_chart",
+  "productionUse": true,
+  "brand": "Vans",
+  "brandId": "vans",
+  "audience": "kids",
+  "market": "US",
+  "retrievedAt": "2026-07-26",
+  "officialUrl": "https://www.vans.com/en-us/help/size-charts",
+  "measurementMeaning": {
+    "footLengthIn": "Official Vans displayed foot-length value in inches; rounded display value is preserved."
+  },
+  "columns": ["usKids", "uk", "eu", "footLengthIn"],
+  "rows": [
+    ["10.5C", 10, 27, 6.5],
+    ["11C", 10.5, 27.5, 6.5],
+    ["11.5C", 11, 28, 6.7],
+    ["12C", 11.5, 29, 6.9],
+    ["12.5C", 12, 30, 7.1],
+    ["13C", 12.5, 30.5, 7.3],
+    ["13.5C", 13, 31, 7.3],
+    ["1Y", 13.5, 31.5, 7.5],
+    ["1.5Y", 1, 32, 7.7],
+    ["2Y", 1.5, 32.5, 7.9],
+    ["2.5Y", 2, 33, 8.1],
+    ["3Y", 2.5, 34, 8.3]
+  ],
+  "numberingReset": {
+    "after": "13.5C",
+    "next": "1Y",
+    "rule": "Do not interpolate across the reset."
+  }
+}

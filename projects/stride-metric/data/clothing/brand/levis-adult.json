@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "datasetType": "official_brand_body_measurement_chart",
+  "productionUse": true,
+  "brand": "Levi's",
+  "brandId": "levis",
+  "audience": "adult",
+  "market": "US",
+  "retrievedAt": "2026-07-26",
+  "officialUrl": "https://www.levi.com/US/en_US/info/sizeguide",
+  "sourceUnit": "in",
+  "segments": [
+    {
+      "id": "men_bottoms",
+      "columns": ["label", "waistMin", "waistMax", "seatMin", "seatMax", "thighMin", "thighMax"],
+      "rows": [
+        ["26", 26.5, 27, 32.5, 33, 20.5, 21],
+        ["27", 27.5, 28, 33.5, 34, 21, 21.5],
+        ["28", 28.5, 29, 34.5, 35, 21.5, 22],
+        ["29", 29.5, 30, 35.5, 36, 22, 22.5],
+        ["30", 30.5, 31, 36.5, 37, 22.5, 23],
+        ["31", 31.5, 32, 37.5, 38, 23, 23.5],
+        ["32", 32.5, 33, 38.5, 39, 23.5, 24],
+        ["33", 33.5, 34, 39.5, 40, 23, 24.5],
+        ["34", 34.5, 35, 40.5, 41, 24, 25],
+        ["35", 35.5, 36, 41.5, 42, 25, 26],
+        ["36", 36.5, 37.5, 42.5, 43.5, 26, 27],
+        ["38", 38.5, 39.5, 44.5, 45.5, 27, 28],
+        ["40", 40.5, 41.5, 46.5, 47.5, 27.25, 28.25],
+        ["42", 42.5, 43.5, 48.5, 49.5, 28, 29],
+        ["44", 44.5, 45.5, 50.5, 51.5, 28.75, 29.75],
+        ["46", 46.5, 47.5, 52.5, 53.5, 29.5, 30.5],
+        ["48", 48.5, 49.5, 54.5, 55.5, 30.25, 31.25],
+        ["50", 50.5, 51.5, 56.5, 57.5, 31, 32],
+        ["52", 52.5, 53.5, 58.5, 59.5, 31.75, 32.75],
+        ["54", 54.5, 55.5, 60.5, 61.5, 32.5, 33.5],
+        ["56", 56.5, 57.5, 62.5, 63.5, 33.25, 34.5],
+        ["58", 58.5, 59.5, 64.5, 65.5, 33.5, 34.75],
+        ["60", 60.5, 61.5, 66.5, 67.5, 34.75, 36]
+      ]
+    },
+    {
+      "id": "men_tops",
+      "columns": ["label", "lmc", "neckMin", "neckMax", "chestMin", "chestMax", "waistMin", "waistMax", "seatMin", "seatMax"],
+      "rows": [
+        ["XS", "0", 14.75, 14.9, 32, 34, 26, 28, 32, 34],
+        ["S", "1", 15, 15.25, 35, 37, 29, 31, 35, 37],
+        ["M", "2", 15.4, 15.75, 38, 40, 32, 34, 38, 40],
+        ["L", "3", 16.1, 16.5, 41, 43, 35, 37, 41, 43],
+        ["XL", "4", 16.9, 17.25, 44, 46, 38, 40, 44, 46]
+      ]
+    },
+    {
+      "id": "men_big_tall_tops",
+      "columns": ["label", "neckMin", "neckMax", "chestMin", "chestMax", "waistMin", "waistMax", "seatMin", "seatMax"],
+      "rows": [
+        ["XXL", 17.6, 18, 47, 49, 41, 43, 47, 49],
+        ["3XL", 18.4, 18.75, 50, 52, 44, 46, 50, 52],
+        ["4XL", 19.1, 19.5, 54, 56, 48, 50, 54, 56],
+        ["5XL", 20.1, 20.5, 58, 60, 52, 54, 58, 60]
+      ]
+    },
+    {
+      "id": "women_bottoms",
+      "measurementType": "published_anchor",
+      "matchingPolicy": "exact_anchor_only_until_brand_interval_rule_is_confirmed",
+      "columns": ["usNumeric", "jeanSize", "waistAnchor", "hipAnchor"],
+      "rows": [
+        ["00/0", "24", 25.25, 34],
+        ["0/1", "25", 26.25, 35],
+        ["2/3", "26", 27.25, 36],
+        ["4/5", "27", 28.25, 37],
+        ["6/7", "28", 29.25, 38],
+        ["8/9", "29", 30.25, 39],
+        ["10/11", "30", 31.25, 40],
+        ["12/13", "31", 32.75, 41.5],
+        ["14/15", "32", 34.25, 43],
+        ["16/17", "33", 35.75, 44.5],
+        ["18/20", "34", 37.75, 46.5]
+      ]
+    },
+    {
+      "id": "women_plus_bottoms",
+      "measurementType": "published_anchor",
+      "matchingPolicy": "exact_anchor_only_until_brand_interval_rule_is_confirmed",
+      "columns": ["label", "jeanSize", "waistAnchor", "hipAnchor"],
+      "rows": [
+        ["16W", "34", 38.25, 47.25],
+        ["18W", "36", 40.25, 49.25],
+        ["20W", "38", 42.25, 51.25],
+        ["22W", "40", 44.25, 53.25],
+        ["24W", "42", 46.25, 55.25],
+        ["26W", "44", 48.25, 57.25]
+      ]
+    },
+    {
+      "id": "women_tops",
+      "measurementType": "published_anchor",
+      "matchingPolicy": "exact_anchor_only_until_brand_interval_rule_is_confirmed",
+      "columns": ["label", "lmc", "chestAnchor", "waistAnchor", "hipAnchor"],
+      "rows": [
+        ["XXS", null, 31, 24.25, 34],
+        ["XS", "0", 33, 26.25, 36],
+        ["S", "1", 35, 28.25, 38],
+        ["M", "2", 37, 30.25, 40],
+        ["L", "3", 39.5, 32.75, 42.5],
+        ["XL", "4", 42.5, 35.75, 45.5],
+        ["XXL", null, 45.5, 38.75, 48.5]
+      ]
+    }
+  ],
+  "menInseamByHeight": [
+    {"inseamLabel": 30, "heightRule": "5ft6in-5ft8in"},
+    {"inseamLabel": 32, "heightRule": "5ft8in-6ft0in"},
+    {"inseamLabel": 34, "heightRule": "6ft0in-6ft4in"},
+    {"inseamLabel": 36, "heightRule": "6ft4in-6ft6in"},
+    {"inseamLabel": 38, "heightRule": "6ft4in-6ft8in"}
+  ],
+  "womenInseamByHeight": [
+    {"inseamLabel": 28, "heightRule": "5ft1in_or_shorter"},
+    {"inseamLabel": 30, "alpha": "S", "heightRule": "5ft2in-5ft3in"},
+    {"inseamLabel": 32, "alpha": "M", "heightRule": "5ft4in-5ft7in"},
+    {"inseamLabel": 34, "alpha": "L", "heightRule": "5ft8in_or_taller"}
+  ],
+  "unitNormalization": "Runtime converts source inches using exactly 25.4 mm per inch; source values remain canonical for audit."
+}

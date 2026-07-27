@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "datasetType": "official_brand_size_chart",
+  "productionUse": true,
+  "brand": "ASICS",
+  "brandId": "asics",
+  "audience": "adult_women",
+  "market": "US",
+  "retrievedAt": "2026-07-26",
+  "officialUrl": "https://www.asics.com/us/en-us/aligned-size-charts/",
+  "extractionMethod": "Rendered official dynamic table",
+  "measurementMeaning": {
+    "cmLabel": "ASICS CM column; retained as a brand label and not silently relabelled as measured foot length"
+  },
+  "columns": ["usWomen", "uk", "eu", "cmLabel"],
+  "rows": [
+    [4, 2, 34.5, 21.5],
+    [4.5, 2.5, 35, 22],
+    [5, 3, 35.5, 22.5],
+    [5.5, 3.5, 36, 22.75],
+    [6, 4, 37, 23],
+    [6.5, 4.5, 37.5, 23.5],
+    [7, 5, 38, 24],
+    [7.5, 5.5, 39, 24.5],
+    [8, 6, 39.5, 25],
+    [8.5, 6.5, 40, 25.5],
+    [9, 7, 40.5, 25.75],
+    [9.5, 7.5, 41.5, 26],
+    [10, 8, 42, 26.5],
+    [10.5, 8.5, 42.5, 27],
+    [11, 9, 43.5, 27.5],
+    [11.5, 9.5, 44, 28],
+    [12, 10, 44.5, 28.5],
+    [12.5, 10.5, 45, 28.75],
+    [13, 11, 46, 29]
+  ],
+  "widthCodes": {
+    "narrow": "2A",
+    "standard": "B",
+    "wide": "D",
+    "extraWide": "2E"
+  }
+}

@@ -1,0 +1,326 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-07-26",
+  "status": "architecture_baseline_audited",
+  "productionReady": false,
+  "datasets": [
+    {
+      "id": "shoe_systems",
+      "path": "data/shoe/systems.json",
+      "status": "production_candidate",
+      "description": "Canonical identifiers, labels and market aliases."
+    },
+    {
+      "id": "shoe_national_standards",
+      "path": "data/shoe/national-standards.json",
+      "status": "production_candidate",
+      "description": "Country-level standards, adoption status and implementation caveats for generic and brand-specific conversions."
+    },
+    {
+      "id": "iso_19407_adult_formulas",
+      "path": "data/shoe/reference/iso-19407-adult-formulas.json",
+      "status": "research_seed",
+      "description": "Adult mathematical relationships derived from a lawful public preview; not a reproduction licence."
+    },
+    {
+      "id": "gbt_36935_2025_adult_technical",
+      "path": "data/shoe/reference/gbt-36935-2025-adult-technical.json",
+      "status": "current_edition_verified_internal_reference",
+      "description": "All 74 adult technical anchor rows transcribed from GB/T 36935-2025 Table 1 for internal implementation verification."
+    },
+    {
+      "id": "gbt_36935_2025_adult_recommended",
+      "path": "data/shoe/reference/gbt-36935-2025-adult-recommended.json",
+      "status": "current_edition_verified_internal_reference",
+      "description": "All three pivot panels from GB/T 36935-2025 Table 2, preserving the standard's intentionally non-bijective recommended mappings."
+    },
+    {
+      "id": "gbt_36935_2025_children",
+      "path": "data/shoe/reference/gbt-36935-2025-children.json",
+      "status": "current_edition_verified",
+      "description": "All 38 children's conversion rows directly verified against GB/T 36935-2025 Table 3, covering foot lengths 120-236 mm."
+    },
+    {
+      "id": "gbt_36935_2025_evidence",
+      "path": "data/shoe/reference/gbt-36935-2025-evidence.json",
+      "status": "current_edition_evidence",
+      "description": "Current-edition metadata, declared changes, Korean-size relationship and printed adult examples from supplied screenshots."
+    },
+    {
+      "id": "new_balance_adult_brand_chart",
+      "path": "data/shoe/brand/new-balance-adult.json",
+      "status": "production_candidate",
+      "description": "Official New Balance adult brand table; published length values are scoped to New Balance and are not a universal standard."
+    },
+    {
+      "id": "brand_size_chart_registry",
+      "path": "data/shoe/brand/registry.json",
+      "status": "active_acquisition",
+      "description": "Brand coverage, official source, segment and product-family extraction status."
+    },
+    {
+      "id": "nike_adult_brand_chart",
+      "path": "data/shoe/brand/nike-adult.json",
+      "status": "production_candidate",
+      "description": "Official Nike adult crosswalk with brand CM/JP label kept separate from measured foot length."
+    },
+    {
+      "id": "nike_kids_brand_chart",
+      "path": "data/shoe/brand/nike-kids.json",
+      "status": "production_candidate",
+      "description": "Official Nike kids chart split into baby/toddler, little-kids and big-kids segments, with CM/JP labels kept separate from measured length."
+    },
+    {
+      "id": "reebok_unisex_brand_chart",
+      "path": "data/shoe/brand/reebok-unisex.json",
+      "status": "production_candidate",
+      "description": "Official Reebok unisex crosswalk including AU/NZ, China and Japan labels plus heel-to-toe measurement."
+    },
+    {
+      "id": "converse_chuck_adult_brand_chart",
+      "path": "data/shoe/brand/converse-chuck-adult.json",
+      "status": "production_candidate",
+      "description": "Official Converse Chuck Taylor family chart with fit advice stored separately from published rows."
+    },
+    {
+      "id": "adidas_adult_brand_chart",
+      "path": "data/shoe/brand/adidas-adult.json",
+      "status": "production_candidate",
+      "description": "Official adidas adult crosswalk with thirds-based EU display values and JP labels separated from measured heel-to-toe length."
+    },
+    {
+      "id": "adidas_kids_brand_chart",
+      "path": "data/shoe/brand/adidas-kids.json",
+      "status": "production_candidate",
+      "description": "Official adidas baby, child and youth footwear chart using measured heel-to-toe length."
+    },
+    {
+      "id": "skechers_men_brand_chart",
+      "path": "data/shoe/brand/skechers-men.json",
+      "status": "partial_production_candidate",
+      "description": "Official Skechers men's label crosswalk; exact per-size foot length is intentionally not inferred from the printable measuring graphic."
+    },
+    {
+      "id": "vans_unisex_brand_chart",
+      "path": "data/shoe/brand/vans-unisex.json",
+      "status": "production_candidate",
+      "description": "Official Vans unisex crosswalk with JP label and rounded displayed foot-length value kept as distinct fields."
+    },
+    {
+      "id": "vans_kids_brand_chart",
+      "path": "data/shoe/brand/vans-kids.json",
+      "status": "production_candidate",
+      "description": "Official Vans kids crosswalk with the C-to-Y numbering reset preserved."
+    },
+    {
+      "id": "vans_toddlers_brand_chart",
+      "path": "data/shoe/brand/vans-toddlers.json",
+      "status": "production_candidate",
+      "description": "Official Vans toddler crosswalk with rounded displayed foot-length values preserved."
+    },
+    {
+      "id": "asics_men_brand_chart",
+      "path": "data/shoe/brand/asics-men.json",
+      "status": "partial_production_candidate",
+      "description": "Official ASICS men's dynamic chart with CM retained as a brand label and width codes captured separately."
+    },
+    {
+      "id": "asics_women_brand_chart",
+      "path": "data/shoe/brand/asics-women.json",
+      "status": "partial_production_candidate",
+      "description": "Official ASICS women's dynamic chart with CM retained as a brand label and width codes captured separately."
+    },
+    {
+      "id": "asics_kids_brand_chart",
+      "path": "data/shoe/brand/asics-kids.json",
+      "status": "production_candidate",
+      "description": "Official ASICS kids dynamic chart with the K13-to-1 numbering reset and width codes captured."
+    },
+    {
+      "id": "new_balance_kids_brand_chart",
+      "path": "data/shoe/brand/new-balance-kids.json",
+      "status": "production_candidate_with_exclusion",
+      "description": "Official New Balance kids length, conversion and width-circumference tables; one non-monotonic UK source value is preserved as evidence and excluded."
+    },
+    {
+      "id": "puma_adult_brand_chart",
+      "path": "data/shoe/brand/puma-adult.json",
+      "status": "production_candidate",
+      "description": "Official PUMA adult men's and women's label crosswalk; adult foot length is not inferred."
+    },
+    {
+      "id": "puma_kids_brand_chart",
+      "path": "data/shoe/brand/puma-kids.json",
+      "status": "production_candidate",
+      "description": "Official PUMA toddler, little-kids and junior crosswalk with displayed foot length in inches."
+    },
+    {
+      "id": "clothing_measurements",
+      "path": "data/clothing/measurement-model.json",
+      "status": "production_candidate",
+      "description": "Body-measurement model for clothing recommendations."
+    },
+    {
+      "id": "clothing_brand_registry",
+      "path": "data/clothing/brand/registry.json",
+      "status": "active_acquisition",
+      "description": "Clothing brand coverage, category, audience and extraction status."
+    },
+    {
+      "id": "adidas_men_tops",
+      "path": "data/clothing/brand/adidas-men-tops.json",
+      "status": "production_candidate",
+      "description": "Official adidas men's tops body-measurement ranges."
+    },
+    {
+      "id": "adidas_women_tops",
+      "path": "data/clothing/brand/adidas-women-tops.json",
+      "status": "production_candidate",
+      "description": "Official adidas women's standard and plus tops body-measurement ranges and international labels."
+    },
+    {
+      "id": "adidas_men_bottoms",
+      "path": "data/clothing/brand/adidas-men-bottoms.json",
+      "status": "production_candidate",
+      "description": "Official adidas men's standard, tall and short bottoms body-measurement ranges plus denim and international label crosswalks."
+    },
+    {
+      "id": "adidas_women_bottoms",
+      "path": "data/clothing/brand/adidas-women-bottoms.json",
+      "status": "production_candidate",
+      "description": "Official adidas women's standard, tall, petite, plus and maternity bottoms ranges plus denim measurements."
+    },
+    {
+      "id": "adidas_kids_apparel",
+      "path": "data/clothing/brand/adidas-kids.json",
+      "status": "production_candidate",
+      "description": "Official adidas baby, child and youth apparel body-measurement chart."
+    },
+    {
+      "id": "nike_men_tops",
+      "path": "data/clothing/brand/nike-men-tops.json",
+      "status": "production_candidate",
+      "description": "Official Nike men's tops body-measurement ranges and tall fit rule."
+    },
+    {
+      "id": "nike_women_tops",
+      "path": "data/clothing/brand/nike-women-tops.json",
+      "status": "production_candidate",
+      "description": "Official Nike women's standard and plus tops body-measurement ranges, international labels and tall fit rule."
+    },
+    {
+      "id": "nike_men_bottoms",
+      "path": "data/clothing/brand/nike-men-bottoms.json",
+      "status": "production_candidate",
+      "description": "Official Nike men's bottoms body-measurement ranges, tall rule and hip-priority conflict rule."
+    },
+    {
+      "id": "nike_women_bottoms",
+      "path": "data/clothing/brand/nike-women-bottoms.json",
+      "status": "production_candidate",
+      "description": "Official Nike women's standard and plus bottoms body-measurement ranges, international labels, short/tall rules and hip-priority conflict rule."
+    },
+    {
+      "id": "nike_boys_apparel",
+      "path": "data/clothing/brand/nike-boys.json",
+      "status": "production_candidate",
+      "description": "Official Nike boys and unisex kids standard and plus body-measurement chart."
+    },
+    {
+      "id": "nike_girls_apparel",
+      "path": "data/clothing/brand/nike-girls.json",
+      "status": "production_candidate",
+      "description": "Official Nike girls standard and plus body-measurement chart."
+    },
+    {
+      "id": "hm_men_apparel",
+      "path": "data/clothing/brand/hm-men.json",
+      "status": "production_candidate_market_scoped",
+      "description": "Official H&M Indonesia men's tops and bottoms body-measurement chart; must not be applied to other H&M markets without verification."
+    },
+    {
+      "id": "hm_women_apparel",
+      "path": "data/clothing/brand/hm-women.json",
+      "status": "production_candidate_market_scoped",
+      "description": "Official H&M Dominican Republic women's tops and bottoms body-measurement chart; must not be applied to other H&M markets without verification."
+    },
+    {
+      "id": "hm_kids_apparel",
+      "path": "data/clothing/brand/hm-kids.json",
+      "status": "production_candidate_market_scoped",
+      "description": "Official H&M Bahrain kids body-measurement chart; age is guidance and market/version scope is mandatory."
+    },
+    {
+      "id": "reebok_adult_apparel",
+      "path": "data/clothing/brand/reebok-adult.json",
+      "status": "production_candidate_with_exclusion",
+      "description": "Official Reebok men's tops and bottoms plus women's tops; the source's implausible women's-bottoms XXL inseam value is excluded."
+    },
+    {
+      "id": "under_armour_men_tops",
+      "path": "data/clothing/brand/under-armour-men-tops.json",
+      "status": "production_candidate",
+      "description": "Official Under Armour men's tops body-measurement ranges and tall fit rule."
+    },
+    {
+      "id": "under_armour_women_tops",
+      "path": "data/clothing/brand/under-armour-women-tops.json",
+      "status": "production_candidate",
+      "description": "Official Under Armour women's standard and plus tops body-measurement ranges and tall/short rules."
+    },
+    {
+      "id": "under_armour_men_bottoms",
+      "path": "data/clothing/brand/under-armour-men-bottoms.json",
+      "status": "production_candidate",
+      "description": "Official Under Armour men's bottoms waist and hip body-measurement ranges plus tall rule."
+    },
+    {
+      "id": "under_armour_women_bottoms",
+      "path": "data/clothing/brand/under-armour-women-bottoms.json",
+      "status": "production_candidate",
+      "description": "Official Under Armour women's standard and plus bottoms waist and hip body-measurement ranges plus tall/short rules."
+    },
+    {
+      "id": "under_armour_boys_tops",
+      "path": "data/clothing/brand/under-armour-boys.json",
+      "status": "production_candidate",
+      "description": "Official Under Armour boys standard, plus and little-boys body-measurement ranges."
+    },
+    {
+      "id": "under_armour_girls_apparel",
+      "path": "data/clothing/brand/under-armour-girls.json",
+      "status": "production_candidate",
+      "description": "Official Under Armour girls youth, plus, little-girls, toddler and infant body-measurement ranges."
+    },
+    {
+      "id": "levis_adult_apparel",
+      "path": "data/clothing/brand/levis-adult.json",
+      "status": "production_candidate_with_anchor_limit",
+      "description": "Official Levi's US men's denim/body ranges and tops plus women's published measurement anchors; women's anchors are not converted into invented intervals."
+    },
+    {
+      "id": "market_competitors",
+      "path": "data/market/competitors-2026.json",
+      "status": "research_only",
+      "description": "Public store-listing observations, not download estimates."
+    },
+    {
+      "id": "competitor_g1_g8_observations",
+      "path": "data/market/competitor-g1-g8-observations.json",
+      "status": "research_only",
+      "description": "Screenshot-grounded comparison anchors proving that the competitor table is not GB/T 36935-2025 / ISO 19407:2023."
+    },
+    {
+      "id": "source_registry",
+      "path": "data/sources.json",
+      "status": "production_candidate",
+      "description": "Source, version, access and licensing registry."
+    }
+  ],
+  "blockers": [
+    "Confirm whether derived conversion data may be redistributed in a commercial app.",
+    "Acquire or verify additional market-specific clothing charts before claiming global coverage; ISO 8559 defines designation methodology but is not a universal S/M/L conversion table.",
+    "Expand dresses, outerwear, specialist garments and product-family overrides after the conversion core is implemented; unsupported combinations must remain explicitly unavailable.",
+    "Obtain a Sensor Tower/AppTweak/data.ai export before using monthly-download or retention claims."
+  ]
+}

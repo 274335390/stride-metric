@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-07-25",
+  "status": "measurement_model_not_conversion_table",
+  "principle": "Recommend from body measurements, garment category and fit preference; never promise a universal S/M/L equivalence.",
+  "standards": ["ISO 8559-1:2017", "ISO 8559-2:2025", "ISO 8559-3:2018", "ISO 8559-4:2023"],
+  "measurements": [
+    {"id": "body_height", "unit": "cm", "requiredFor": ["children", "tops", "outerwear", "dresses", "trousers"]},
+    {"id": "chest_girth", "unit": "cm", "requiredFor": ["mens_tops", "mens_outerwear"]},
+    {"id": "bust_girth", "unit": "cm", "requiredFor": ["womens_tops", "womens_outerwear", "dresses"]},
+    {"id": "waist_girth", "unit": "cm", "requiredFor": ["trousers", "skirts", "dresses"]},
+    {"id": "hip_girth", "unit": "cm", "requiredFor": ["trousers", "skirts", "dresses"]},
+    {"id": "inside_leg_length", "unit": "cm", "requiredFor": ["trousers"]},
+    {"id": "neck_girth", "unit": "cm", "requiredFor": ["shirts"]},
+    {"id": "underbust_girth", "unit": "cm", "requiredFor": ["bras"], "phase": "later"},
+    {"id": "head_girth", "unit": "cm", "requiredFor": ["headwear"], "phase": "later"}
+  ],
+  "garmentCategories": [
+    {
+      "id": "tops",
+      "primary": ["chest_girth", "bust_girth"],
+      "secondary": ["body_height", "waist_girth"]
+    },
+    {
+      "id": "outerwear",
+      "primary": ["chest_girth", "bust_girth"],
+      "secondary": ["body_height", "waist_girth"]
+    },
+    {
+      "id": "trousers",
+      "primary": ["waist_girth", "hip_girth"],
+      "secondary": ["inside_leg_length", "body_height"]
+    },
+    {
+      "id": "dresses",
+      "primary": ["bust_girth", "hip_girth"],
+      "secondary": ["waist_girth", "body_height"]
+    },
+    {
+      "id": "children",
+      "primary": ["body_height"],
+      "secondary": ["chest_girth", "waist_girth", "hip_girth"]
+    }
+  ],
+  "fitPreferences": ["slim", "regular", "relaxed"],
+  "resultContract": {
+    "required": ["recommendedLabel", "measurementRange", "confidence", "sourceIds", "disclaimer"],
+    "confidenceValues": ["high_for_exact_brand_chart", "reference", "low"]
+  }
+}

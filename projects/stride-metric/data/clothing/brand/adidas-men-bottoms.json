@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "datasetType": "official_brand_body_measurement_chart",
+  "productionUse": true,
+  "brand": "adidas",
+  "brandId": "adidas",
+  "audience": "adult_men",
+  "category": "bottoms",
+  "market": "US",
+  "retrievedAt": "2026-07-26",
+  "officialUrl": "https://www.adidas.com/us/help/size_charts/men-pants_shorts",
+  "unit": "cm",
+  "segments": [
+    {
+      "id": "standard",
+      "columns": ["label", "waistMin", "waistMax", "hipMin", "hipMax", "inseam"],
+      "rows": [
+        ["XS", 71, 74, 82, 85, 81],
+        ["S", 75, 80, 86, 91, 81.5],
+        ["M", 81, 88, 92, 99, 82],
+        ["L", 89, 96, 100, 107, 82.5],
+        ["XL", 97, 106, 108, 116, 83],
+        ["2XL", 107, 119, 117, 125, 82.5],
+        ["3XL", 120, 132, 126, 135, 82]
+      ]
+    },
+    {
+      "id": "tall",
+      "minimumHeightCm": 188,
+      "columns": ["label", "waistMin", "waistMax", "hipMin", "hipMax", "inseam"],
+      "rows": [
+        ["S Tall", 75, 80, 86, 91, 86.5],
+        ["M Tall", 81, 88, 92, 99, 87],
+        ["L Tall", 89, 96, 100, 107, 87.5],
+        ["XL Tall", 97, 106, 108, 116, 88],
+        ["2XL Tall", 107, 119, 117, 125, 87.5],
+        ["3XL Tall", 120, 132, 126, 135, 87],
+        ["4XL Tall", 133, 145, 136, 145, 86.5]
+      ]
+    },
+    {
+      "id": "short",
+      "maximumHeightCm": 175,
+      "columns": ["label", "waistMin", "waistMax", "hipMin", "hipMax", "inseam"],
+      "rows": [
+        ["XS Short", 71, 74, 82, 85, 76],
+        ["S Short", 75, 80, 86, 91, 76.5],
+        ["M Short", 81, 88, 92, 99, 77],
+        ["L Short", 89, 96, 100, 107, 77.5],
+        ["XL Short", 97, 106, 108, 116, 78],
+        ["2XL Short", 107, 119, 117, 125, 77.5],
+        ["3XL Short", 120, 132, 126, 135, 77]
+      ]
+    }
+  ],
+  "denimLabelCrosswalk": {
+    "columns": ["alpha", "inchPantSize"],
+    "rows": [
+      ["XS", 27],
+      ["S", 28],
+      ["M", 29],
+      ["L", 30],
+      ["XL", 31],
+      ["2XL", 32]
+    ],
+    "productionRecommendationUse": false,
+    "reason": "The published denim section is a label crosswalk, not a body-measurement range."
+  },
+  "denimInseamLabelsCm": {
+    "30": [75, 79],
+    "32": [80, 84],
+    "34": [85, 89]
+  },
+  "internationalNumericCrosswalk": {
+    "columns": ["eu", "ukInch", "usInch", "fr", "it"],
+    "rows": [
+      [42, 26, 26, 36, 42],
+      [44, 28, 28, 38, 44],
+      [46, 30, 30, 40, 46],
+      [48, 32, 32, 42, 48],
+      [50, 34, 34, 44, 50],
+      [52, 36, 36, 46, 52],
+      [54, 38, 38, 48, 54],
+      [56, 40, 40, 50, 56],
+      [58, 42, 42, 52, 58],
+      [60, 44, 44, 54, 60],
+      [62, 46, 46, 56, 62],
+      [64, 48, 48, 58, 64],
+      [66, 50, 50, 60, 66]
+    ]
+  }
+}

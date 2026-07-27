@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "datasetType": "official_brand_body_measurement_chart",
+  "productionUse": true,
+  "brand": "H&M",
+  "brandId": "hm",
+  "audience": "adult_men",
+  "category": "tops_and_bottoms",
+  "market": "ID",
+  "retrievedAt": "2026-07-26",
+  "officialUrl": "https://id.hm.com/id_en/customer-service/sizeguide/men.html",
+  "unit": "cm",
+  "columns": ["eur", "usTop", "usBottom", "chestMin", "chestMax", "waistMin", "waistMax", "hipMin", "hipMax", "inseam"],
+  "rows": [
+    [40, "30R", "26R", 78, 82, 66, 70, 85.5, 88.5, 76.5],
+    [42, "32R", "28R", 82, 86, 70, 74, 88.5, 91.5, 77],
+    [44, "34R", "30R", 86, 90, 74, 78, 91.5, 94.5, 77.5],
+    [46, "36R", "32R", 90, 94, 78, 82, 94.5, 97.5, 78],
+    [48, "38R", "33R", 94, 98, 82, 86, 97.5, 100.5, 78.5],
+    [50, "40R", "34R", 98, 102, 86, 90, 100.5, 103.5, 79],
+    [52, "42R", "36R", 102, 106, 90, 94, 103.5, 106.5, 79.5],
+    [54, "44R", "38R", 106, 110, 94, 98.5, 106.5, 109.5, 80],
+    [56, "46R", "40R", 110, 114, 98.5, 103, 109.5, 112.5, 80.25],
+    [58, "48R", "42R", 114, 118, 103, 107.5, 112.5, 115.5, 80.5],
+    [60, "50R", "44R", 118, 122, 107.5, 112, 115.5, 118.5, 80.75],
+    [62, "52R", "46R", 122, 126, 112, 116.5, 118.5, 121.5, 81]
+  ],
+  "marketWarning": "H&M has updated size charts in some markets. Never apply this ID-market chart globally or across versions."
+}

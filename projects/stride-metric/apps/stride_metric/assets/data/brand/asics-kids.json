@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "datasetType": "official_brand_size_chart",
+  "productionUse": true,
+  "brand": "ASICS",
+  "brandId": "asics",
+  "audience": "kids",
+  "market": "US",
+  "retrievedAt": "2026-07-26",
+  "officialUrl": "https://www.asics.com/us/en-us/aligned-size-charts/",
+  "extractionMethod": "Rendered official dynamic table",
+  "measurementMeaning": {
+    "cmLabel": "ASICS CM column; retained as the official brand label. The official page also gives heel-to-toe measuring instructions."
+  },
+  "columns": ["usKids", "eu", "cmLabel"],
+  "rows": [
+    ["K4", 19.5, 12.5],
+    ["K4.5", 20.5, 12.75],
+    ["K5", 21, 13],
+    ["K5.5", 21.5, 13.5],
+    ["K6", 22.5, 14],
+    ["K6.5", 23, 14.5],
+    ["K7", 23.5, 15],
+    ["K7.5", 24, 15.25],
+    ["K8", 25, 15.5],
+    ["K8.5", 25.5, 15.75],
+    ["K9", 26, 16],
+    ["K9.5", 26.5, 16.5],
+    ["K10", 27, 17],
+    ["K11", 28.5, 17.5],
+    ["K12", 30, 18.5],
+    ["K13", 31.5, 19.5],
+    ["1", 32.5, 20],
+    ["1.5", 33, 20.5],
+    ["2", 33.5, 21],
+    ["2.5", 34.5, 21.5],
+    ["3", 35, 22],
+    ["3.5", 35.5, 22.25],
+    ["4", 36, 22.5],
+    ["4.5", 37, 23],
+    ["5", 37.5, 23.5],
+    ["5.5", 38, 24],
+    ["6", 39, 24.5],
+    ["6.5", 39.5, 25],
+    ["7", 40, 25.5]
+  ],
+  "widthCodes": {
+    "narrow": "B",
+    "standard": "D",
+    "wide": "2E",
+    "extraWide": "4E"
+  },
+  "numberingReset": {
+    "after": "K13",
+    "next": "1",
+    "rule": "Do not interpolate across the reset."
+  }
+}
