@@ -4,7 +4,7 @@
 
 ## 中文
 
-这里是 StrideMetric 的 Flutter 客户端，面向 Android、iOS 和 Web。产品总览、数据原则和完整仓库结构请查看[项目 README](../../README.md)。
+这里是 StrideMetric 的 Flutter 客户端源码。产品总览、数据原则和完整仓库结构请查看[项目 README](../../README.md)。
 
 <p align="center">
   <img src="../../docs/images/stride-metric-web-converter.png" width="240" alt="StrideMetric 换算首页">
@@ -32,6 +32,8 @@
 - Flutter SDK（以 `pubspec.lock` 对应版本为准）
 - Android Studio 与 Android SDK；构建 iOS 时需要 macOS 与 Xcode
 - Android 真机需打开开发者选项和 USB 调试
+
+> 当前由维护者验证的是 Android 真机和 Web。仓库中的 iOS 工程未经维护者实际构建测试，欢迎有 macOS/iOS 环境的贡献者自行调试并提交修复。
 
 ### 运行
 
@@ -77,7 +79,7 @@ flutter build apk --debug
 
 ## English
 
-This directory contains the StrideMetric Flutter client for Android, iOS, and Web. See the [project README](../../README.md) for the product overview, data principles, and full repository map.
+This directory contains the StrideMetric Flutter client source. See the [project README](../../README.md) for the product overview, data principles, and full repository map.
 
 <p align="center">
   <img src="../../docs/images/stride-metric-web-converter.png" width="240" alt="StrideMetric converter">
@@ -105,6 +107,8 @@ This directory contains the StrideMetric Flutter client for Android, iOS, and We
 - Flutter SDK compatible with `pubspec.lock`
 - Android Studio and Android SDK; macOS and Xcode for iOS builds
 - Developer options and USB debugging enabled for an Android device
+
+> The maintainer currently verifies Android devices and Web. The included iOS project has not been built or tested by the maintainer; contributors with a macOS/iOS environment are welcome to test it and submit fixes.
 
 ### Run
 

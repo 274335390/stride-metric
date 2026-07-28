@@ -10,7 +10,7 @@
 
 ## 中文
 
-StrideMetric（中文显示名：鞋码换算）是一款面向 Android、iOS 和 Web 的离线国际鞋码换算应用。它将通用换算标准、品牌官方尺码表和个人脚部档案分开处理，让用户清楚每个结果的来源和含义。
+StrideMetric（中文显示名：鞋码换算）是一个开源的 Flutter 国际鞋码换算项目，提供离线换算、品牌尺码参考、个人档案和多语言界面。它将通用换算标准、品牌官方尺码表和个人脚部档案分开处理，让用户清楚每个结果的来源和含义。
 
 ### 应用展示
 
@@ -59,6 +59,10 @@ flutter run
 flutter run -d chrome
 ```
 
+### 平台验证范围
+
+维护者目前主要在 Android 真机和 Web 环境中验证项目。仓库保留标准 Flutter iOS 工程，但维护者目前没有 macOS/iOS 测试环境，因此不承诺 iOS 可直接构建或完整兼容。欢迎社区自行调试并贡献兼容性修复。
+
 ### 验证
 
 ```bash
@@ -90,7 +94,7 @@ node scripts/validate-data.mjs
 
 ## English
 
-StrideMetric is an offline international shoe-size conversion app for Android, iOS, and Web. It keeps generic standards, brand-published charts, and personal foot profiles separate so users can understand what each result represents.
+StrideMetric is an open-source Flutter project for international shoe-size conversion, with offline conversion, brand references, personal profiles, and multilingual interfaces. It keeps generic standards, brand-published charts, and personal foot profiles separate so users can understand what each result represents.
 
 ### Screenshots
 
@@ -138,6 +142,10 @@ For a connected Android phone, use `flutter devices` and then `flutter run -d <d
 ```bash
 flutter run -d chrome
 ```
+
+### Platform validation
+
+The maintainer currently validates the project primarily on physical Android devices and Web. A standard Flutter iOS project is included, but the maintainer currently has no macOS/iOS test environment; direct iOS builds and full compatibility are therefore not guaranteed. Community testing and compatibility contributions are welcome.
 
 ### Verification
 
