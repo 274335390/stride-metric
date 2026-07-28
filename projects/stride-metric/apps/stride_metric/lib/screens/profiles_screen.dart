@@ -143,141 +143,290 @@ class _ProfileEditorScreenState extends State<ProfileEditorScreen> {
         centerTitle: true,
         backgroundColor: Colors.transparent,
       ),
-      body: ListView(
-        padding: const EdgeInsets.fromLTRB(18, 8, 18, 26),
-        children: [
-          Card(
-            margin: EdgeInsets.zero,
-            child: Column(
-              children: [
-                ListTile(
-                  leading: CircleAvatar(
-                    backgroundColor: teal.withValues(alpha: .1),
-                    child: const Icon(Icons.person_outline, color: teal),
+      body: SafeArea(
+        top: false,
+        child: ListView(
+          padding: const EdgeInsets.fromLTRB(18, 8, 18, 26),
+          children: [
+            Card(
+              margin: EdgeInsets.zero,
+              child: ListTile(
+                minTileHeight: 72,
+                leading: CircleAvatar(
+                  radius: 24,
+                  backgroundColor: teal.withValues(alpha: .1),
+                  child: const Icon(
+                    Icons.account_circle_outlined,
+                    color: teal,
+                    size: 34,
                   ),
-                  title: Text(l10n.t('avatar')),
-                  subtitle: Text(l10n.t('chooseImage')),
-                  trailing: const Icon(Icons.image_outlined),
                 ),
-                const Divider(),
-                Padding(
-                  padding: const EdgeInsets.all(14),
-                  child: TextField(
-                    controller: name,
-                    decoration: InputDecoration(
-                      labelText: l10n.t('profileName'),
-                      border: const OutlineInputBorder(),
+                title: Text(
+                  l10n.t('avatar'),
+                  style: const TextStyle(fontWeight: FontWeight.w800),
+                ),
+                subtitle: Text(l10n.t('chooseImage')),
+                trailing: const Icon(Icons.image_outlined),
+                onTap: () {},
+              ),
+            ),
+            const SizedBox(height: 12),
+            Card(
+              margin: EdgeInsets.zero,
+              clipBehavior: Clip.antiAlias,
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 66,
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 16),
+                          child: Text(
+                            l10n.t('profileName'),
+                            style: TextStyle(
+                              color: Theme.of(
+                                context,
+                              ).colorScheme.onSurfaceVariant,
+                              fontSize: 13,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(width: 16),
+                        Expanded(
+                          child: TextField(
+                            controller: name,
+                            textAlign: TextAlign.end,
+                            style: const TextStyle(fontWeight: FontWeight.w800),
+                            decoration: const InputDecoration(
+                              border: InputBorder.none,
+                              enabledBorder: InputBorder.none,
+                              focusedBorder: InputBorder.none,
+                              contentPadding: EdgeInsets.symmetric(
+                                horizontal: 16,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                ),
-                const Divider(),
-                Padding(
-                  padding: const EdgeInsets.all(14),
-                  child: AudienceSegment(
-                    value: audience,
-                    onChanged: (value) => setState(() => audience = value),
+                  const Divider(),
+                  SizedBox(
+                    height: 66,
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 16),
+                          child: Text(
+                            l10n.t('defaultShoeType'),
+                            style: TextStyle(
+                              color: Theme.of(
+                                context,
+                              ).colorScheme.onSurfaceVariant,
+                              fontSize: 13,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(width: 12),
+                        Expanded(
+                          child: Padding(
+                            padding: const EdgeInsets.only(right: 12),
+                            child: AudienceSegment(
+                              value: audience,
+                              onChanged: (value) =>
+                                  setState(() => audience = value),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-          const SizedBox(height: 22),
-          SectionTitle(l10n.t('measurements')),
-          const SizedBox(height: 10),
-          Card(
-            margin: EdgeInsets.zero,
-            child: Column(
-              children: [
-                _MeasureTile(
-                  label: l10n.t('leftFoot'),
-                  value: formatLength(left, widget.state.unit),
-                  onTap: () => _pickLength(true),
-                ),
-                const Divider(),
-                _MeasureTile(
-                  label: l10n.t('rightFoot'),
-                  value: formatLength(right, widget.state.unit),
-                  onTap: () => _pickLength(false),
-                ),
-                const Divider(),
-                ListTile(
-                  title: Text(l10n.t('footWidth')),
-                  trailing: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        l10n.widthName(width),
-                        style: const TextStyle(fontWeight: FontWeight.w800),
-                      ),
-                      const Icon(Icons.chevron_right),
-                    ],
+            const SizedBox(height: 22),
+            SectionTitle(l10n.t('measurements')),
+            const SizedBox(height: 10),
+            Card(
+              margin: EdgeInsets.zero,
+              child: Column(
+                children: [
+                  _MeasureTile(
+                    label: l10n.t('leftFoot'),
+                    value: formatLength(left, widget.state.unit),
+                    onTap: () => _pickLength(true),
                   ),
-                  onTap: _pickWidth,
-                ),
-              ],
+                  const Divider(),
+                  _MeasureTile(
+                    label: l10n.t('rightFoot'),
+                    value: formatLength(right, widget.state.unit),
+                    onTap: () => _pickLength(false),
+                  ),
+                  const Divider(),
+                  ListTile(
+                    title: Text(l10n.t('footWidth')),
+                    trailing: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          l10n.widthName(width),
+                          style: const TextStyle(fontWeight: FontWeight.w800),
+                        ),
+                        const Icon(Icons.chevron_right),
+                      ],
+                    ),
+                    onTap: _pickWidth,
+                  ),
+                ],
+              ),
             ),
-          ),
-          const SizedBox(height: 24),
-          PrimaryButton(
-            label: l10n.t('saveProfileButton'),
-            onPressed: () async {
-              final trimmedName = name.text.trim();
-              if (trimmedName.isEmpty) {
+            const SizedBox(height: 24),
+            PrimaryButton(
+              label: l10n.t('saveProfileButton'),
+              onPressed: () async {
+                final trimmedName = name.text.trim();
+                if (trimmedName.isEmpty) {
+                  ScaffoldMessenger.of(
+                    context,
+                  ).showSnackBar(SnackBar(content: Text(l10n.t('enterName'))));
+                  return;
+                }
+                await widget.state.saveProfile(
+                  ShoeProfile(
+                    name: trimmedName,
+                    audience: audience,
+                    leftFootMm: left,
+                    rightFootMm: right,
+                    width: width,
+                  ),
+                  originalName: widget.isNew ? null : widget.profile.name,
+                );
+                if (!context.mounted) return;
                 ScaffoldMessenger.of(
                   context,
-                ).showSnackBar(SnackBar(content: Text(l10n.t('enterName'))));
-                return;
-              }
-              await widget.state.saveProfile(
-                ShoeProfile(
-                  name: trimmedName,
-                  audience: audience,
-                  leftFootMm: left,
-                  rightFootMm: right,
-                  width: width,
-                ),
-                originalName: widget.isNew ? null : widget.profile.name,
-              );
-              if (!context.mounted) return;
-              ScaffoldMessenger.of(
-                context,
-              ).showSnackBar(SnackBar(content: Text(l10n.t('profileSaved'))));
-              Navigator.pop(context);
-            },
-          ),
-        ],
+                ).showSnackBar(SnackBar(content: Text(l10n.t('profileSaved'))));
+                Navigator.pop(context);
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
 
   Future<void> _pickLength(bool isLeft) async {
     final rows = widget.state.catalog.rowsFor(audience);
+    var pending = isLeft ? left : right;
     final selected = await showModalBottomSheet<double>(
       context: context,
       isScrollControlled: true,
-      builder: (context) => BottomSheetFrame(
-        title: context.l10n.t(isLeft ? 'chooseLeft' : 'chooseRight'),
-        child: SizedBox(
-          height: MediaQuery.sizeOf(context).height * .58,
-          child: GridView.builder(
-            itemCount: rows.length,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 4,
-              childAspectRatio: 1.7,
-              crossAxisSpacing: 8,
-              mainAxisSpacing: 8,
-            ),
-            itemBuilder: (context, index) => FilledButton.tonal(
-              onPressed: () => Navigator.pop(context, rows[index].footMm),
-              child: Text(
-                compactNumber(
-                  displayLength(rows[index].footMm, widget.state.unit),
-                  maxDecimals: widget.state.unit == LengthUnit.inch ? 2 : 1,
-                ),
+      builder: (context) => StatefulBuilder(
+        builder: (context, setSheetState) {
+          final selectedIndex = rows.indexWhere(
+            (row) => row.footMm == pending,
+          );
+          final estimatedHeight = 86 + 14 + (rows.length / 5).ceil() * 50 + 68;
+          final contentHeight = estimatedHeight
+              .clamp(258.0, MediaQuery.sizeOf(context).height * .66)
+              .toDouble();
+
+          return BottomSheetFrame(
+            title: context.l10n.t(isLeft ? 'chooseLeft' : 'chooseRight'),
+            child: SizedBox(
+              height: contentHeight,
+              child: Column(
+                children: [
+                  Container(
+                    height: 86,
+                    padding: const EdgeInsets.symmetric(horizontal: 14),
+                    decoration: BoxDecoration(
+                      color: blue.withValues(alpha: .09),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Row(
+                      children: [
+                        _ProfileLengthStepButton(
+                          icon: Icons.remove_rounded,
+                          enabled: selectedIndex > 0,
+                          onPressed: () => setSheetState(
+                            () => pending = rows[selectedIndex - 1].footMm,
+                          ),
+                        ),
+                        Expanded(
+                          child: Text(
+                            formatLength(pending, widget.state.unit),
+                            textAlign: TextAlign.center,
+                            style: const TextStyle(
+                              fontSize: 30,
+                              fontWeight: FontWeight.w900,
+                              letterSpacing: -1,
+                            ),
+                          ),
+                        ),
+                        _ProfileLengthStepButton(
+                          icon: Icons.add_rounded,
+                          enabled:
+                              selectedIndex >= 0 &&
+                              selectedIndex < rows.length - 1,
+                          onPressed: () => setSheetState(
+                            () => pending = rows[selectedIndex + 1].footMm,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 14),
+                  Expanded(
+                    child: GridView.builder(
+                      padding: EdgeInsets.zero,
+                      itemCount: rows.length,
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 5,
+                            mainAxisExtent: 42,
+                            crossAxisSpacing: 8,
+                            mainAxisSpacing: 8,
+                          ),
+                      itemBuilder: (context, index) {
+                        final mm = rows[index].footMm;
+                        final isSelected = mm == pending;
+                        return FilledButton.tonal(
+                          onPressed: () =>
+                              setSheetState(() => pending = mm),
+                          style: FilledButton.styleFrom(
+                            backgroundColor: isSelected ? blue : null,
+                            foregroundColor: isSelected ? Colors.white : null,
+                            padding: EdgeInsets.zero,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(11),
+                            ),
+                          ),
+                          child: Text(
+                            compactNumber(
+                              displayLength(mm, widget.state.unit),
+                              maxDecimals:
+                                  widget.state.unit == LengthUnit.inch ? 2 : 1,
+                            ),
+                            style: const TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w800,
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                  const SizedBox(height: 14),
+                  PrimaryButton(
+                    label: context.l10n.t('done'),
+                    onPressed: () => Navigator.pop(context, pending),
+                  ),
+                ],
               ),
             ),
-          ),
-        ),
+          );
+        },
       ),
     );
     if (selected == null) return;
@@ -312,6 +461,34 @@ class _ProfileEditorScreenState extends State<ProfileEditorScreen> {
       ),
     );
     if (selected != null) setState(() => width = selected);
+  }
+}
+
+class _ProfileLengthStepButton extends StatelessWidget {
+  const _ProfileLengthStepButton({
+    required this.icon,
+    required this.enabled,
+    required this.onPressed,
+  });
+
+  final IconData icon;
+  final bool enabled;
+  final VoidCallback onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton.filledTonal(
+      onPressed: enabled ? onPressed : null,
+      icon: Icon(icon),
+      style: IconButton.styleFrom(
+        minimumSize: const Size.square(46),
+        maximumSize: const Size.square(46),
+        backgroundColor: Theme.of(context).colorScheme.surface,
+        foregroundColor: blue,
+        side: BorderSide(color: blue.withValues(alpha: .24)),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+      ),
+    );
   }
 }
 

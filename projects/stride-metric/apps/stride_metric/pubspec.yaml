@@ -36,6 +36,8 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
+  flutter_svg: ^2.3.0
+  google_mobile_ads: ^9.0.0
   shared_preferences: ^2.5.5
   size_domain:
     path: ../../packages/size_domain
@@ -64,6 +66,9 @@ flutter:
   uses-material-design: true
   assets:
     - assets/branding/
+    - assets/brands/
+    - assets/ui/foot-measure-guide.png
+    - assets/ui/shoe-outline-icon.png
     - assets/data/reference/
     - assets/data/brand/
     - assets/data/sources.json

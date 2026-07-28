@@ -37,10 +37,55 @@ class ResultScreen extends StatelessWidget {
     final brandMatches = state.catalog.nearestBrandMatches(
       row.footMm,
       result.audience,
-      limit: 3,
+      limit: state.catalog.brandsFor(result.audience).length,
     );
 
     return Scaffold(
+      bottomNavigationBar: SafeArea(
+        top: false,
+        child: Material(
+          color: Theme.of(context).colorScheme.surface,
+          child: Container(
+            padding: const EdgeInsets.fromLTRB(18, 12, 18, 12),
+            decoration: BoxDecoration(
+              border: Border(
+                top: BorderSide(color: Theme.of(context).dividerColor),
+              ),
+            ),
+            child: Row(
+              children: [
+                Expanded(
+                  child: OutlinedButton(
+                    onPressed: () => _saveProfile(context),
+                    style: OutlinedButton.styleFrom(
+                      minimumSize: const Size.fromHeight(52),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(14),
+                      ),
+                    ),
+                    child: Text(l10n.t('saveProfile')),
+                  ),
+                ),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: FilledButton(
+                    onPressed: () => Navigator.pop(context),
+                    style: FilledButton.styleFrom(
+                      backgroundColor: blue,
+                      foregroundColor: Colors.white,
+                      minimumSize: const Size.fromHeight(52),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(14),
+                      ),
+                    ),
+                    child: Text(l10n.t('convertAgain')),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
       body: SafeArea(
         bottom: false,
         child: Column(
@@ -93,11 +138,14 @@ class ResultScreen extends StatelessWidget {
                 padding: const EdgeInsets.fromLTRB(18, 8, 18, 30),
                 children: [
                   Container(
-                    height: 156,
-                    padding: const EdgeInsets.all(22),
+                    constraints: const BoxConstraints(minHeight: 116),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 20,
+                      vertical: 18,
+                    ),
                     decoration: BoxDecoration(
                       color: navy,
-                      borderRadius: BorderRadius.circular(24),
+                      borderRadius: BorderRadius.circular(22),
                     ),
                     child: Row(
                       children: [
@@ -117,9 +165,9 @@ class ResultScreen extends StatelessWidget {
                               mainValue,
                               style: const TextStyle(
                                 color: Colors.white,
-                                fontSize: 56,
+                                fontSize: 46,
                                 fontWeight: FontWeight.w900,
-                                letterSpacing: -2,
+                                letterSpacing: -1.5,
                               ),
                             ),
                           ),
@@ -210,56 +258,21 @@ class ResultScreen extends StatelessWidget {
                     const SizedBox(height: 20),
                     SectionTitle(l10n.t('brandReference')),
                     const SizedBox(height: 10),
-                    Card(
-                      margin: EdgeInsets.zero,
-                      clipBehavior: Clip.antiAlias,
-                      child: Column(
-                        children: [
-                          for (
-                            var index = 0;
-                            index < brandMatches.length;
-                            index++
-                          ) ...[
-                            _BrandMatchRow(match: brandMatches[index]),
-                            if (index != brandMatches.length - 1)
-                              const Divider(),
-                          ],
+                    Column(
+                      children: [
+                        for (
+                          var index = 0;
+                          index < brandMatches.length;
+                          index++
+                        ) ...[
+                          _BrandMatchRow(match: brandMatches[index]),
+                          if (index != brandMatches.length - 1)
+                            const SizedBox(height: 10),
                         ],
-                      ),
+                      ],
                     ),
                   ],
-                  const SizedBox(height: 22),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: OutlinedButton(
-                          onPressed: () => _saveProfile(context),
-                          style: OutlinedButton.styleFrom(
-                            minimumSize: const Size.fromHeight(52),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(14),
-                            ),
-                          ),
-                          child: Text(l10n.t('saveProfile')),
-                        ),
-                      ),
-                      const SizedBox(width: 12),
-                      Expanded(
-                        child: FilledButton(
-                          onPressed: () => Navigator.pop(context),
-                          style: FilledButton.styleFrom(
-                            backgroundColor: blue,
-                            foregroundColor: Colors.white,
-                            minimumSize: const Size.fromHeight(52),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(14),
-                            ),
-                          ),
-                          child: Text(l10n.t('convertAgain')),
-                        ),
-                      ),
-                    ],
-                  ),
+                  const SizedBox(height: 8),
                 ],
               ),
             ),
@@ -331,38 +344,47 @@ class _BrandMatchRow extends StatelessWidget {
       ('EU', match.eu),
       (context.l10n.t('shoeLabel'), match.label),
     ];
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(14, 14, 14, 12),
-      child: Row(
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.fromLTRB(16, 14, 16, 14),
+      decoration: BoxDecoration(
+        color: Theme.of(context).colorScheme.surfaceContainerLow,
+        border: Border.all(color: Theme.of(context).dividerColor),
+        borderRadius: BorderRadius.circular(16),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(
-            width: 84,
-            child: Text(
-              match.brand,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style: const TextStyle(fontWeight: FontWeight.w900),
-            ),
+          Text(
+            match.brand,
+            key: ValueKey('brand-${match.brand}'),
+            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w900),
           ),
-          ...cells.map(
-            (item) => Expanded(
-              child: Column(
-                children: [
-                  Text(
-                    item.$1,
-                    style: TextStyle(
-                      fontSize: 9,
-                      color: Theme.of(context).colorScheme.onSurfaceVariant,
-                    ),
+          const SizedBox(height: 12),
+          Row(
+            children: [
+              for (final item in cells)
+                Expanded(
+                  child: Column(
+                    children: [
+                      Text(
+                        item.$1,
+                        style: TextStyle(
+                          fontSize: 9,
+                          color: Theme.of(
+                            context,
+                          ).colorScheme.onSurfaceVariant,
+                        ),
+                      ),
+                      const SizedBox(height: 3),
+                      Text(
+                        value(item.$2),
+                        style: const TextStyle(fontWeight: FontWeight.w800),
+                      ),
+                    ],
                   ),
-                  const SizedBox(height: 3),
-                  Text(
-                    value(item.$2),
-                    style: const TextStyle(fontWeight: FontWeight.w800),
-                  ),
-                ],
-              ),
-            ),
+                ),
+            ],
           ),
         ],
       ),

@@ -7,11 +7,13 @@ import 'models.dart';
 class ShoeCatalog {
   ShoeCatalog._({
     required this.adultRows,
+    required this.adultRowsBySystem,
     required this.childRows,
     required this.brands,
   });
 
   final List<StandardSizeRow> adultRows;
+  final Map<SizeSystem, List<StandardSizeRow>> adultRowsBySystem;
   final List<StandardSizeRow> childRows;
   final List<BrandDataset> brands;
 
@@ -53,6 +55,30 @@ class ShoeCatalog {
               );
             })
             .toList(growable: false);
+    final adultPanels = adultRaw['panels'] as Map<String, dynamic>;
+    List<StandardSizeRow> parseAdultPanel(String panel) =>
+        (adultPanels[panel] as List<dynamic>)
+            .map((raw) {
+              final row = raw as Map<String, dynamic>;
+              final mm = (row['mondopoint'] as num).toDouble();
+              return StandardSizeRow(
+                footMm: mm,
+                eu: row['eu'] as num?,
+                uk: row['ukAdult'] as num?,
+                usMen: row['usMen'] as num?,
+                usWomen: row['usWomen'] as num?,
+                jp: mm / 10,
+                kr: mm,
+              );
+            })
+            .toList(growable: false);
+    final adultRowsBySystem = <SizeSystem, List<StandardSizeRow>>{
+      SizeSystem.eu: parseAdultPanel('euPivot'),
+      SizeSystem.uk: parseAdultPanel('ukPivot'),
+      SizeSystem.us: adultRows,
+      SizeSystem.jp: adultRows,
+      SizeSystem.kr: adultRows,
+    };
 
     final childRows = (childRaw['rows'] as List<dynamic>)
         .map((raw) {
@@ -119,6 +145,7 @@ class ShoeCatalog {
 
     return ShoeCatalog._(
       adultRows: adultRows,
+      adultRowsBySystem: adultRowsBySystem,
       childRows: childRows,
       brands: brands,
     );
@@ -195,30 +222,60 @@ class ShoeCatalog {
   List<StandardSizeRow> rowsFor(Audience audience) =>
       audience == Audience.child ? childRows : adultRows;
 
-  StandardSizeRow nearest(double footMm, Audience audience) {
+  CatalogMatch matchFootLength(double footMm, Audience audience) {
+    if (!footMm.isFinite || footMm <= 0) {
+      return const CatalogMatch.invalidInput();
+    }
     final rows = rowsFor(audience);
-    return rows.reduce(
-      (a, b) => (a.footMm - footMm).abs() <= (b.footMm - footMm).abs() ? a : b,
-    );
-  }
-
-  StandardSizeRow? byKnownSize(
-    SizeSystem system,
-    num value,
-    Audience audience,
-  ) {
-    StandardSizeRow? best;
-    double difference = double.infinity;
-    for (final row in rowsFor(audience)) {
-      final candidate = row.valueFor(system, audience);
-      if (candidate == null) continue;
-      final next = (candidate.toDouble() - value.toDouble()).abs();
-      if (next < difference) {
-        difference = next;
-        best = row;
+    if (rows.isEmpty) return const CatalogMatch.unsupported();
+    if (footMm < rows.first.footMm || footMm > rows.last.footMm) {
+      return const CatalogMatch.outOfRange();
+    }
+    for (final row in rows) {
+      if ((row.footMm - footMm).abs() < 0.000001) {
+        return CatalogMatch.withMatch(row);
       }
     }
-    return best;
+    for (var index = 0; index < rows.length - 1; index++) {
+      final lower = rows[index];
+      final upper = rows[index + 1];
+      if (footMm <= lower.footMm || footMm >= upper.footMm) continue;
+      final midpoint = (lower.footMm + upper.footMm) / 2;
+      if ((footMm - midpoint).abs() < 0.000001) {
+        return CatalogMatch.multiple([lower, upper]);
+      }
+      return CatalogMatch.withMatch(footMm < midpoint ? lower : upper);
+    }
+    return const CatalogMatch.unsupported();
+  }
+
+  CatalogMatch matchKnownSize(SizeSystem system, num value, Audience audience) {
+    final numericValue = value.toDouble();
+    if (!numericValue.isFinite || numericValue <= 0) {
+      return const CatalogMatch.invalidInput();
+    }
+    final rows = audience == Audience.child
+        ? childRows
+        : adultRowsBySystem[system] ?? const <StandardSizeRow>[];
+    if (rows.isEmpty) return const CatalogMatch.unsupported();
+    final available = <double>[];
+    final matches = <StandardSizeRow>[];
+    for (final row in rows) {
+      final candidate = row.valueFor(system, audience);
+      if (candidate == null) continue;
+      available.add(candidate.toDouble());
+      if ((candidate.toDouble() - numericValue).abs() < 0.000001) {
+        matches.add(row);
+      }
+    }
+    if (available.isEmpty) return const CatalogMatch.unsupported();
+    if (numericValue < available.reduce((a, b) => a < b ? a : b) ||
+        numericValue > available.reduce((a, b) => a > b ? a : b)) {
+      return const CatalogMatch.outOfRange();
+    }
+    if (matches.isEmpty) return const CatalogMatch.unsupported();
+    if (matches.length > 1) return CatalogMatch.multiple(matches);
+    return CatalogMatch.withMatch(matches.single);
   }
 
   List<BrandDataset> brandsFor(Audience audience) {
@@ -267,15 +324,30 @@ class ShoeCatalog {
         return value * 10;
       }
 
-      List<dynamic>? closest;
-      var difference = double.infinity;
+      final measuredRows = <(double, List<dynamic>)>[];
       for (final row in brand.rows) {
         final measured = rowFootMm(row);
         if (measured == null) continue;
-        final next = (measured - footMm).abs();
-        if (next < difference) {
-          difference = next;
-          closest = row;
+        measuredRows.add((measured, row));
+      }
+      if (measuredRows.isEmpty) continue;
+      measuredRows.sort((a, b) => a.$1.compareTo(b.$1));
+      if (footMm < measuredRows.first.$1 || footMm > measuredRows.last.$1) {
+        continue;
+      }
+      List<dynamic>? closest;
+      for (var index = 0; index < measuredRows.length; index++) {
+        final current = measuredRows[index];
+        if ((current.$1 - footMm).abs() < 0.000001) {
+          closest = current.$2;
+          break;
+        }
+        if (index == measuredRows.length - 1) continue;
+        final next = measuredRows[index + 1];
+        if (footMm > current.$1 && footMm < next.$1) {
+          final midpoint = (current.$1 + next.$1) / 2;
+          closest = footMm <= midpoint ? current.$2 : next.$2;
+          break;
         }
       }
       if (closest == null) continue;

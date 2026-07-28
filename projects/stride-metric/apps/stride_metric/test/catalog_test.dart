@@ -18,7 +18,7 @@ void main() {
   });
 
   test('260 mm women standard conversion is exact', () {
-    final row = catalog.nearest(260, Audience.women);
+    final row = catalog.matchFootLength(260, Audience.women).row!;
     expect(row.eu, 41);
     expect(row.uk, 7.5);
     expect(row.usWomen, 9.5);
@@ -27,16 +27,85 @@ void main() {
   });
 
   test('known EU size resolves back to the same standard row', () {
-    final row = catalog.byKnownSize(SizeSystem.eu, 41, Audience.women);
+    final row = catalog.matchKnownSize(SizeSystem.eu, 41, Audience.women).row;
     expect(row, isNotNull);
     expect(row!.footMm, 260);
     expect(row.usWomen, 9.5);
+  });
+
+  test('adult values outside the published standard are not clamped', () {
+    expect(
+      catalog.matchFootLength(205, Audience.women).status,
+      MatchStatus.outOfRange,
+    );
+    expect(
+      catalog.matchFootLength(325, Audience.men).status,
+      MatchStatus.outOfRange,
+    );
+  });
+
+  test('known sizes require an exact legal label', () {
+    expect(
+      catalog.matchKnownSize(SizeSystem.eu, 41.2, Audience.women).status,
+      MatchStatus.unsupported,
+    );
+    expect(
+      catalog.matchKnownSize(SizeSystem.eu, 99, Audience.women).status,
+      MatchStatus.outOfRange,
+    );
+  });
+
+  test('EU lookup uses the official EU pivot rather than a chained row', () {
+    final row = catalog.matchKnownSize(SizeSystem.eu, 34.5, Audience.women).row;
+    expect(row, isNotNull);
+    expect(row!.footMm, 215);
+    expect(row.uk, 2.5);
+    expect(row.usWomen, 4.5);
+  });
+
+  test('child US numbering reset can return explicit candidates', () {
+    final match = catalog.matchKnownSize(SizeSystem.us, 4, Audience.child);
+    expect(match.status, MatchStatus.multipleCandidates);
+    expect(match.candidates.map((row) => row.footMm), containsAll([120, 220]));
   });
 
   test('children standard keeps all directly verified rows', () {
     expect(catalog.childRows, hasLength(38));
     expect(catalog.childRows.first.footMm, 120);
     expect(catalog.childRows.last.footMm, 236);
+  });
+
+  test('every published standard foot-length row resolves to itself', () {
+    for (final audience in Audience.values) {
+      for (final expected in catalog.rowsFor(audience)) {
+        final match = catalog.matchFootLength(expected.footMm, audience);
+        expect(
+          match.row,
+          same(expected),
+          reason: '${audience.name} ${expected.footMm} mm',
+        );
+      }
+    }
+  });
+
+  test('every published label is preserved by exact reverse lookup', () {
+    for (final audience in Audience.values) {
+      for (final system in SizeSystem.values) {
+        final rows = audience == Audience.child
+            ? catalog.childRows
+            : catalog.adultRowsBySystem[system]!;
+        for (final expected in rows) {
+          final label = expected.valueFor(system, audience);
+          if (label == null) continue;
+          final match = catalog.matchKnownSize(system, label, audience);
+          expect(
+            match.candidates,
+            contains(expected),
+            reason: '${audience.name} ${system.name} $label',
+          );
+        }
+      }
+    }
   });
 
   test('adidas child chart is present with all 36 official rows', () {
@@ -62,4 +131,17 @@ void main() {
       expect(nike.label, 26.5);
     },
   );
+
+  test('26 cm men result includes every measured official brand match', () {
+    final matches = catalog.nearestBrandMatches(
+      260,
+      Audience.men,
+      limit: catalog.brandsFor(Audience.men).length,
+    );
+
+    expect(
+      matches.map((item) => item.brand).toSet(),
+      equals({'adidas', 'Converse', 'New Balance', 'Nike', 'Reebok', 'Vans'}),
+    );
+  });
 }

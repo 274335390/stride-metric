@@ -176,11 +176,14 @@ class AppState extends ChangeNotifier {
     notifyListeners();
   }
 
-  ConversionResult convert() {
-    final row = input == ConversionInput.footLength
-        ? catalog.nearest(footMm, audience)
-        : catalog.byKnownSize(knownSystem, knownValue, audience) ??
-              catalog.nearest(footMm, audience);
+  CatalogMatch resolveConversion() => input == ConversionInput.footLength
+      ? catalog.matchFootLength(footMm, audience)
+      : catalog.matchKnownSize(knownSystem, knownValue, audience);
+
+  ConversionResult? convert() {
+    final match = resolveConversion();
+    final row = match.row;
+    if (row == null) return null;
     final result = ConversionResult(
       row: row,
       audience: audience,

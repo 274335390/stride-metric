@@ -41,6 +41,17 @@ ThemeData buildTheme(Brightness brightness) {
         ),
       ),
     ),
+    bottomSheetTheme: BottomSheetThemeData(
+      backgroundColor: dark ? const Color(0xFF162239) : Colors.white,
+      modalBackgroundColor: dark ? const Color(0xFF162239) : Colors.white,
+      modalBarrierColor: Colors.black.withValues(alpha: .46),
+      elevation: 18,
+      modalElevation: 18,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+      ),
+      clipBehavior: Clip.antiAlias,
+    ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       selectedItemColor: blue,
       unselectedItemColor: const Color(0xFF728197),

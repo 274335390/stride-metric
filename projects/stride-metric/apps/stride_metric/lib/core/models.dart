@@ -6,6 +6,39 @@ enum ConversionInput { footLength, knownSize }
 
 enum SizeSystem { eu, uk, us, jp, kr }
 
+enum MatchStatus {
+  matched,
+  multipleCandidates,
+  outOfRange,
+  unsupported,
+  invalidInput,
+}
+
+class CatalogMatch {
+  const CatalogMatch._(this.status, this.candidates);
+
+  factory CatalogMatch.withMatch(StandardSizeRow row) =>
+      CatalogMatch._(MatchStatus.matched, [row]);
+
+  factory CatalogMatch.multiple(List<StandardSizeRow> rows) =>
+      CatalogMatch._(MatchStatus.multipleCandidates, List.unmodifiable(rows));
+
+  const CatalogMatch.outOfRange() : this._(MatchStatus.outOfRange, const []);
+
+  const CatalogMatch.unsupported() : this._(MatchStatus.unsupported, const []);
+
+  const CatalogMatch.invalidInput()
+    : this._(MatchStatus.invalidInput, const []);
+
+  final MatchStatus status;
+  final List<StandardSizeRow> candidates;
+
+  StandardSizeRow? get row =>
+      status == MatchStatus.matched && candidates.length == 1
+      ? candidates.single
+      : null;
+}
+
 extension LengthUnitText on LengthUnit {
   String get symbol => switch (this) {
     LengthUnit.mm => 'mm',

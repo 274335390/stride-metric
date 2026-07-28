@@ -1,0 +1,3 @@
+# Copy this key into android/local.properties for production builds.
+# Never commit android/local.properties.
+admob.androidAppId=ca-app-pub-REPLACE_ME~REPLACE_ME

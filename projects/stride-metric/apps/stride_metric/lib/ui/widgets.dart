@@ -25,13 +25,19 @@ class AppPageHeader extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                title,
-                style: const TextStyle(
-                  fontSize: 30,
-                  height: 1,
-                  fontWeight: FontWeight.w900,
-                  letterSpacing: -1,
+              FittedBox(
+                fit: BoxFit.scaleDown,
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  title,
+                  maxLines: 1,
+                  softWrap: false,
+                  style: const TextStyle(
+                    fontSize: 30,
+                    height: 1,
+                    fontWeight: FontWeight.w900,
+                    letterSpacing: -1,
+                  ),
                 ),
               ),
               if (subtitle != null) ...[
@@ -123,13 +129,21 @@ class AudienceSegment extends StatelessWidget {
           .map(
             (item) => ButtonSegment(
               value: item,
-              label: Text(context.l10n.audience(item)),
+              label: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  context.l10n.audience(item),
+                  maxLines: 1,
+                  softWrap: false,
+                ),
+              ),
             ),
           )
           .toList(growable: false),
       selected: {value},
       onSelectionChanged: (selection) => onChanged(selection.first),
       showSelectedIcon: false,
+      expandedInsets: EdgeInsets.zero,
       style: ButtonStyle(
         visualDensity: VisualDensity.compact,
         textStyle: WidgetStateProperty.all(

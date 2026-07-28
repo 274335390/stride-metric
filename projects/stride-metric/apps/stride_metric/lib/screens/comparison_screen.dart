@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../core/app_state.dart';
 import '../core/models.dart';
@@ -66,54 +67,23 @@ class _ComparisonScreenState extends State<ComparisonScreen> {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 10),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: AudienceSegment(
-                          value: state.audience,
-                          onChanged: state.setAudience,
-                        ),
-                      ),
-                      const SizedBox(width: 10),
-                      SegmentedButton<bool>(
-                        segments: [
-                          ButtonSegment(
-                            value: false,
-                            label: Text(l10n.t('standard')),
-                          ),
-                          ButtonSegment(
-                            value: true,
-                            label: Text(l10n.t('brand')),
-                          ),
-                        ],
-                        selected: {brandMode},
-                        onSelectionChanged: (value) {
-                          setState(() => brandMode = value.first);
-                        },
-                        showSelectedIcon: false,
-                        style: ButtonStyle(
-                          visualDensity: VisualDensity.compact,
-                          textStyle: WidgetStateProperty.all(
-                            const TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.w700,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  if (brandMode) ...[
-                    const SizedBox(height: 10),
-                    _BrandSelector(
-                      brand: brand,
-                      fallbackName: state.selectedBrand,
-                      count: brand?.rows.length ?? 0,
-                      onTap: () => _chooseBrand(context, matchingBrands),
-                    ),
-                  ],
                 ],
+              ),
+            ),
+          ),
+          SliverPersistentHeader(
+            pinned: true,
+            delegate: _FilterHeaderDelegate(
+              height: brandMode ? 148 : 66,
+              child: _PinnedFilters(
+                audience: state.audience,
+                brandMode: brandMode,
+                brand: brand,
+                fallbackName: state.selectedBrand,
+                count: brand?.rows.length ?? 0,
+                onAudienceChanged: state.setAudience,
+                onModeChanged: (value) => setState(() => brandMode = value),
+                onChooseBrand: () => _chooseBrand(context, matchingBrands),
               ),
             ),
           ),
@@ -163,6 +133,7 @@ class _ComparisonScreenState extends State<ComparisonScreen> {
               itemBuilder: (context, index) => _TableRow(
                 values: table.rows[index],
                 highlighted: table.highlightedIndex == index,
+                odd: index.isOdd,
               ),
             ),
           const SliverPadding(padding: EdgeInsets.only(bottom: 20)),
@@ -198,14 +169,7 @@ class _ComparisonScreenState extends State<ComparisonScreen> {
                     color: selected ? teal : Theme.of(context).dividerColor,
                   ),
                 ),
-                leading: CircleAvatar(
-                  backgroundColor: blue.withValues(alpha: .09),
-                  foregroundColor: navy,
-                  child: Text(
-                    brand.name.characters.first,
-                    style: const TextStyle(fontWeight: FontWeight.w900),
-                  ),
-                ),
+                leading: _BrandLogo(name: brand.name),
                 title: Text(
                   brand.name,
                   style: const TextStyle(fontWeight: FontWeight.w800),
@@ -268,15 +232,7 @@ _TableData _standardTable(
       .toList(growable: false);
   final highlight = source.indexWhere((row) => (row.footMm - 260).abs() < .01);
   return _TableData(
-    columns: [
-      '${l10n.t('footLength')}\n${unit.symbol}',
-      'EU',
-      'UK',
-      'US',
-      'JP',
-      'KR',
-      complement,
-    ],
+    columns: [unit.symbol, 'EU', 'UK', 'US', 'JP', 'KR', complement],
     rows: rows,
     highlightedIndex: highlight < 0 ? null : highlight,
   );
@@ -356,32 +312,39 @@ class _TableHeaderDelegate extends SliverPersistentHeaderDelegate {
     bool overlapsContent,
   ) {
     return Material(
-      color: Theme.of(context).colorScheme.surfaceContainer,
+      color: Theme.of(context).colorScheme.surface,
       elevation: overlapsContent ? 2 : 0,
-      child: Row(
-        children: columns
-            .map(
-              (column) => Expanded(
-                child: Container(
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                    border: Border(
-                      right: BorderSide(color: Theme.of(context).dividerColor),
-                      bottom: BorderSide(color: Theme.of(context).dividerColor),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 14),
+        child: DecoratedBox(
+          decoration: BoxDecoration(
+            color: Theme.of(context).colorScheme.surfaceContainerHighest,
+            borderRadius: const BorderRadius.vertical(top: Radius.circular(14)),
+          ),
+          child: Row(
+            children: columns
+                .map(
+                  (column) => Expanded(
+                    child: Container(
+                      alignment: Alignment.center,
+                      child: Text(
+                        column,
+                        maxLines: 2,
+                        overflow: TextOverflow.fade,
+                        softWrap: true,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          fontSize: 10,
+                          height: 1.05,
+                          fontWeight: FontWeight.w900,
+                        ),
+                      ),
                     ),
                   ),
-                  child: Text(
-                    column,
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                      fontSize: 9,
-                      fontWeight: FontWeight.w900,
-                    ),
-                  ),
-                ),
-              ),
-            )
-            .toList(growable: false),
+                )
+                .toList(growable: false),
+          ),
+        ),
       ),
     );
   }
@@ -392,46 +355,55 @@ class _TableHeaderDelegate extends SliverPersistentHeaderDelegate {
 }
 
 class _TableRow extends StatelessWidget {
-  const _TableRow({required this.values, required this.highlighted});
+  const _TableRow({
+    required this.values,
+    required this.highlighted,
+    required this.odd,
+  });
   final List<String> values;
   final bool highlighted;
+  final bool odd;
 
   @override
   Widget build(BuildContext context) {
-    return ColoredBox(
-      color: highlighted ? blue.withValues(alpha: .09) : Colors.transparent,
-      child: SizedBox(
-        height: 44,
-        child: Row(
-          children: values
-              .map(
-                (value) => Expanded(
-                  child: Container(
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      border: Border(
-                        right: BorderSide(
-                          color: Theme.of(context).dividerColor,
+    final color = highlighted
+        ? blue.withValues(alpha: .10)
+        : odd
+        ? Theme.of(context).colorScheme.surfaceContainerLow
+        : Theme.of(context).colorScheme.surface;
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 14),
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          color: color,
+          border: Border(
+            bottom: BorderSide(
+              color: Theme.of(context).dividerColor.withValues(alpha: .55),
+            ),
+          ),
+        ),
+        child: SizedBox(
+          height: 48,
+          child: Row(
+            children: values
+                .map(
+                  (value) => Expanded(
+                    child: Center(
+                      child: Text(
+                        value,
+                        style: TextStyle(
+                          fontSize: 11,
+                          fontWeight: highlighted
+                              ? FontWeight.w900
+                              : FontWeight.w600,
+                          color: highlighted ? blue : null,
                         ),
-                        bottom: BorderSide(
-                          color: Theme.of(context).dividerColor,
-                        ),
-                      ),
-                    ),
-                    child: Text(
-                      value,
-                      style: TextStyle(
-                        fontSize: 10,
-                        fontWeight: highlighted
-                            ? FontWeight.w900
-                            : FontWeight.w500,
-                        color: highlighted ? blue : null,
                       ),
                     ),
                   ),
-                ),
-              )
-              .toList(growable: false),
+                )
+                .toList(growable: false),
+          ),
         ),
       ),
     );
@@ -458,13 +430,7 @@ class _BrandSelector extends StatelessWidget {
       color: blue.withValues(alpha: .05),
       child: ListTile(
         onTap: onTap,
-        leading: CircleAvatar(
-          backgroundColor: Colors.white,
-          child: Text(
-            name.characters.first,
-            style: const TextStyle(color: navy, fontWeight: FontWeight.w900),
-          ),
-        ),
+        leading: _BrandLogo(name: name),
         title: Text(name, style: const TextStyle(fontWeight: FontWeight.w900)),
         subtitle: Text(
           count == 0
@@ -488,6 +454,185 @@ class _BrandSelector extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class _PinnedFilters extends StatelessWidget {
+  const _PinnedFilters({
+    required this.audience,
+    required this.brandMode,
+    required this.brand,
+    required this.fallbackName,
+    required this.count,
+    required this.onAudienceChanged,
+    required this.onModeChanged,
+    required this.onChooseBrand,
+  });
+
+  final Audience audience;
+  final bool brandMode;
+  final BrandDataset? brand;
+  final String fallbackName;
+  final int count;
+  final ValueChanged<Audience> onAudienceChanged;
+  final ValueChanged<bool> onModeChanged;
+  final VoidCallback onChooseBrand;
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      color: Theme.of(context).colorScheme.surface,
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(14, 8, 14, 10),
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Expanded(
+                  flex: 3,
+                  child: AudienceSegment(
+                    value: audience,
+                    onChanged: onAudienceChanged,
+                  ),
+                ),
+                const SizedBox(width: 10),
+                Expanded(
+                  flex: 2,
+                  child: SegmentedButton<bool>(
+                    segments: [
+                      ButtonSegment(
+                        value: false,
+                        label: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            context.l10n.t('standard'),
+                            maxLines: 1,
+                            softWrap: false,
+                          ),
+                        ),
+                      ),
+                      ButtonSegment(
+                        value: true,
+                        label: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            context.l10n.t('brand'),
+                            maxLines: 1,
+                            softWrap: false,
+                          ),
+                        ),
+                      ),
+                    ],
+                    selected: {brandMode},
+                    expandedInsets: EdgeInsets.zero,
+                    onSelectionChanged: (value) => onModeChanged(value.first),
+                    showSelectedIcon: false,
+                    style: ButtonStyle(
+                      visualDensity: VisualDensity.compact,
+                      textStyle: WidgetStateProperty.all(
+                        const TextStyle(
+                          fontSize: 11,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            if (brandMode) ...[
+              const SizedBox(height: 10),
+              _BrandSelector(
+                brand: brand,
+                fallbackName: fallbackName,
+                count: count,
+                onTap: onChooseBrand,
+              ),
+            ],
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _FilterHeaderDelegate extends SliverPersistentHeaderDelegate {
+  const _FilterHeaderDelegate({required this.height, required this.child});
+
+  final double height;
+  final Widget child;
+
+  @override
+  double get minExtent => height;
+
+  @override
+  double get maxExtent => height;
+
+  @override
+  Widget build(
+    BuildContext context,
+    double shrinkOffset,
+    bool overlapsContent,
+  ) {
+    return Material(
+      color: Theme.of(context).colorScheme.surface,
+      elevation: overlapsContent ? 2 : 0,
+      child: child,
+    );
+  }
+
+  @override
+  bool shouldRebuild(covariant _FilterHeaderDelegate oldDelegate) =>
+      oldDelegate.height != height || oldDelegate.child != child;
+}
+
+class _BrandLogo extends StatelessWidget {
+  const _BrandLogo({required this.name});
+
+  final String name;
+
+  String? get asset => switch (name.toLowerCase()) {
+    'adidas' => 'assets/brands/adidas.svg',
+    'asics' => 'assets/brands/asics.svg',
+    'converse' => 'assets/brands/converse.svg',
+    'new balance' => 'assets/brands/new-balance.svg',
+    'nike' => 'assets/brands/nike.svg',
+    'puma' => 'assets/brands/puma.svg',
+    'reebok' => 'assets/brands/reebok.svg',
+    'skechers' => 'assets/brands/skechers.svg',
+    'vans' => 'assets/brands/vans.svg',
+    _ => null,
+  };
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 44,
+      height: 44,
+      alignment: Alignment.center,
+      decoration: BoxDecoration(
+        color: Theme.of(context).colorScheme.surface,
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: Theme.of(context).dividerColor),
+      ),
+      child: asset == null
+          ? Icon(
+              Icons.storefront_rounded,
+              size: 25,
+              color: Theme.of(context).colorScheme.onSurface,
+            )
+          : Padding(
+              padding: const EdgeInsets.all(8),
+              child: SvgPicture.asset(
+                asset!,
+                semanticsLabel: name,
+                colorFilter: ColorFilter.mode(
+                  Theme.of(context).colorScheme.onSurface,
+                  BlendMode.srcIn,
+                ),
+              ),
+            ),
     );
   }
 }
