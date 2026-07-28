@@ -15,9 +15,9 @@ An open-source project collection maintained by [274335390](https://github.com/2
 | [StrideMetric](projects/stride-metric/) | 离线国际鞋码换算、品牌官方尺码参考、个人脚部档案与多语言尺码对照 | Flutter、Dart | 积极开发 |
 
 <p align="center">
-  <img src="projects/stride-metric/docs/images/stride-metric-converter-en.jpg" width="260" alt="StrideMetric 鞋码换算首页">
+  <img src="projects/stride-metric/docs/images/stride-metric-web-converter.png" width="260" alt="StrideMetric 鞋码换算首页">
   &nbsp;
-  <img src="projects/stride-metric/docs/images/stride-metric-size-chart-en.jpg" width="260" alt="StrideMetric 国际尺码对照表">
+  <img src="projects/stride-metric/docs/images/stride-metric-web-size-chart.png" width="260" alt="StrideMetric 国际尺码对照表">
 </p>
 
 ### 仓库结构
@@ -44,9 +44,9 @@ dd-openSource/
 | [StrideMetric](projects/stride-metric/) | Offline international shoe-size conversion, official brand references, personal foot profiles, and multilingual size charts | Flutter, Dart | Active development |
 
 <p align="center">
-  <img src="projects/stride-metric/docs/images/stride-metric-converter-en.jpg" width="260" alt="StrideMetric converter home screen">
+  <img src="projects/stride-metric/docs/images/stride-metric-web-converter.png" width="260" alt="StrideMetric converter home screen">
   &nbsp;
-  <img src="projects/stride-metric/docs/images/stride-metric-size-chart-en.jpg" width="260" alt="StrideMetric international size chart">
+  <img src="projects/stride-metric/docs/images/stride-metric-web-size-chart.png" width="260" alt="StrideMetric international size chart">
 </p>
 
 ### Repository layout

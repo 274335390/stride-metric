@@ -7,9 +7,9 @@
 这里是 StrideMetric 的 Flutter 客户端，面向 Android、iOS 和 Web。产品总览、数据原则和完整仓库结构请查看[项目 README](../../README.md)。
 
 <p align="center">
-  <img src="../../docs/images/stride-metric-converter-en.jpg" width="240" alt="StrideMetric 换算首页">
+  <img src="../../docs/images/stride-metric-web-converter.png" width="240" alt="StrideMetric 换算首页">
   &nbsp;
-  <img src="../../docs/images/stride-metric-size-chart-en.jpg" width="240" alt="StrideMetric 尺码表">
+  <img src="../../docs/images/stride-metric-web-size-chart.png" width="240" alt="StrideMetric 尺码表">
 </p>
 
 ### 客户端包含什么
@@ -80,9 +80,9 @@ flutter build apk --debug
 This directory contains the StrideMetric Flutter client for Android, iOS, and Web. See the [project README](../../README.md) for the product overview, data principles, and full repository map.
 
 <p align="center">
-  <img src="../../docs/images/stride-metric-converter-en.jpg" width="240" alt="StrideMetric converter">
+  <img src="../../docs/images/stride-metric-web-converter.png" width="240" alt="StrideMetric converter">
   &nbsp;
-  <img src="../../docs/images/stride-metric-size-chart-en.jpg" width="240" alt="StrideMetric size chart">
+  <img src="../../docs/images/stride-metric-web-size-chart.png" width="240" alt="StrideMetric size chart">
 </p>
 
 ### Client components

@@ -15,11 +15,11 @@ StrideMetric（中文显示名：鞋码换算）是一款面向 Android、iOS �
 ### 应用展示
 
 <p align="center">
-  <img src="docs/images/stride-metric-launch.png" width="220" alt="StrideMetric 启动页">
+  <img src="docs/images/stride-metric-web-converter.png" width="220" alt="StrideMetric 换算首页">
   &nbsp;
-  <img src="docs/images/stride-metric-converter-en.jpg" width="220" alt="StrideMetric 换算首页">
+  <img src="docs/images/stride-metric-web-size-chart.png" width="220" alt="StrideMetric 尺码对照表">
   &nbsp;
-  <img src="docs/images/stride-metric-size-chart-en.jpg" width="220" alt="StrideMetric 尺码对照表">
+  <img src="docs/images/stride-metric-web-profiles.png" width="220" alt="StrideMetric 档案页">
 </p>
 
 ### 核心功能
@@ -95,11 +95,11 @@ StrideMetric is an offline international shoe-size conversion app for Android, i
 ### Screenshots
 
 <p align="center">
-  <img src="docs/images/stride-metric-launch.png" width="220" alt="StrideMetric launch screen">
+  <img src="docs/images/stride-metric-web-converter.png" width="220" alt="StrideMetric converter">
   &nbsp;
-  <img src="docs/images/stride-metric-converter-en.jpg" width="220" alt="StrideMetric converter">
+  <img src="docs/images/stride-metric-web-size-chart.png" width="220" alt="StrideMetric size chart">
   &nbsp;
-  <img src="docs/images/stride-metric-size-chart-en.jpg" width="220" alt="StrideMetric size chart">
+  <img src="docs/images/stride-metric-web-profiles.png" width="220" alt="StrideMetric profiles">
 </p>
 
 ### Features
