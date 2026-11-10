@@ -34,5 +34,5 @@ Thumbs.db
 *.bak
 
 # Licensed standards and internal evidence are intentionally not published
-projects/stride-metric/docs/imgs/
-projects/stride-metric/docs/*.pdf
+docs/imgs/
+docs/*.pdf

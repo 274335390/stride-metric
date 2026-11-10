@@ -1,7 +1,7 @@
 # StrideMetric 下一阶段开发接手清单
 
 > 更新日期：2026-07-27
-> GitHub：<https://github.com/274335390/dd-openSource>
+> GitHub：<https://github.com/274335390/stride-metric>
 > 基线提交：`5b1569ce945039adcaacc3abd436f2226487ecd4`
 > 当前范围：离线国际鞋码换算，Android / iOS；服装尺码不进入首版
 
@@ -10,19 +10,19 @@
 正式仓库：
 
 ```text
-C:\Users\27433\Documents\dd-openSource
+C:\Users\27433\Documents\ChatGPT\stride-metric
 ```
 
 StrideMetric 项目：
 
 ```text
-C:\Users\27433\Documents\dd-openSource\projects\stride-metric
+C:\Users\27433\Documents\ChatGPT\stride-metric
 ```
 
 Flutter 工程：
 
 ```text
-C:\Users\27433\Documents\dd-openSource\projects\stride-metric\apps\stride_metric
+C:\Users\27433\Documents\ChatGPT\stride-metric\apps\stride_metric
 ```
 
 不要继续在以下目录开发：
@@ -32,18 +32,18 @@ C:\Users\27433\Documents\炫酷前端
 C:\tmp\dd-openSource-publish
 ```
 
-“炫酷前端”是前期工作目录，`C:\tmp` 是一次性发布目录；后续唯一可信工作区是正式克隆的 `dd-openSource`。
+“炫酷前端”是前期工作目录，`C:\tmp` 是一次性发布目录；后续唯一可信工作区是正式克隆的 `stride-metric`。
 
 ## 2. 新任务开始时先阅读
 
 按顺序阅读：
 
-1. `projects/stride-metric/README.md`
-2. `projects/stride-metric/DATA_NOTICE.md`
-3. `projects/stride-metric/docs/architecture/flutter-screen-logic-v1.zh-CN.md`
-4. `projects/stride-metric/docs/architecture/system-architecture.zh-CN.md`
-5. `projects/stride-metric/docs/architecture/internationalization-v1.zh-CN.md`
-6. `projects/stride-metric/docs/data-coverage-audit-2026-07-26.zh-CN.md`
+1. `README.md`
+2. `DATA_NOTICE.md`
+3. `docs/architecture/flutter-screen-logic-v1.zh-CN.md`
+4. `docs/architecture/system-architecture.zh-CN.md`
+5. `docs/architecture/internationalization-v1.zh-CN.md`
+6. `docs/data-coverage-audit-2026-07-26.zh-CN.md`
 
 其中 `flutter-screen-logic-v1.zh-CN.md` 是页面、弹层、导航、单位显示和产品文案的当前基准。若 HTML 原型与该文档冲突，以该文档和最新 Flutter 实现为起点，再通过真机体验修正。
 
@@ -249,7 +249,7 @@ HarmonyOS 暂不与 Android/iOS 首版并行；先保持领域层纯 Dart，等�
 在仓库根目录：
 
 ```powershell
-cd C:\Users\27433\Documents\dd-openSource\projects\stride-metric
+cd C:\Users\27433\Documents\ChatGPT\stride-metric
 node scripts\validate-data.mjs
 
 cd apps\stride_metric
@@ -298,10 +298,10 @@ git diff --check
 请继续开发 StrideMetric。
 
 正式仓库：
-C:\Users\27433\Documents\dd-openSource
+C:\Users\27433\Documents\ChatGPT\stride-metric
 
 项目目录：
-C:\Users\27433\Documents\dd-openSource\projects\stride-metric
+C:\Users\27433\Documents\ChatGPT\stride-metric
 
 开始前完整阅读：
 1. NEXT_STEPS.zh-CN.md
